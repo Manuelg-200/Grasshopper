@@ -1,0 +1,110 @@
+body {
+    font-family: Tahoma;
+    background-color: rgb(91, 177, 177);
+}
+
+.ProfileContainer {
+    width: 50%;
+    margin-top: 5%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5%;
+    background-color: white;
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: grey;
+    border-style: solid;
+    padding-left: 1%;
+}
+
+.pictureContainer {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.dataContainer {
+    width: 65%;
+    margin-bottom: 2%;
+    display: inline-block;
+}
+
+.labelContainer {
+    padding : 5% 0 5% 4%;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.label {
+    display: inline-block;
+    width: 90px;
+    font-weight: bold;
+    padding-right: 20%;
+}
+
+.values {
+    padding-left: 4%;
+    text-align: left;
+    color: gray;
+}
+
+.buttonsContainer {
+    display: block;
+    text-align: center;
+    gap: 10px;
+}
+
+.editButton {
+    display: inline-block;
+    padding: 1.5% 0 1.5% 0;
+    width: 100%;
+    max-width: 250px;
+    border-style: none;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: grey;
+    font-weight: bolder;
+    background-color: rgb(173, 172, 222);
+}
+
+.deleteButton {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-style: none;
+    border-radius: 10px;
+    padding: 1.5% 0 1.5% 0;
+    width: 100%;
+    max-width: 250px;
+    border-style: solid;
+    border-color: rgb(226, 127, 127);
+    font-weight: bolder;
+    background-color: rgb(233, 153, 153);
+}
+
+.editButton:hover {
+    background-color: rgb(172, 223, 228);
+}
+
+.editButton:active {
+    background-color: rgb(148, 146, 245);
+}
+
+.deleteButton:hover {
+    background-color: rgb(239, 103, 103);
+}
+
+.deleteButton:active {
+    background-color: rgb(188, 143, 143);
+}
+
+.ErrorContainer {
+    width: 35%;
+    margin: auto;
+    margin-top: 5%;
+    background-color: white;
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: grey;
+    border-style: solid;
+    padding-left: 1%;
+    text-align: center;
+}
