@@ -13,7 +13,6 @@
     
     // Cookie is composed of the username and the expiration date
     list($currentUsername, $Expiration) = explode('|', $_COOKIE["user"]);
-    $stmt;
 
     // Check if the username is already taken if it's different from the current one
     if ($data["Username"] != $currentUsername) {
