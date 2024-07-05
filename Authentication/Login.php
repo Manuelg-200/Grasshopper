@@ -48,7 +48,9 @@
                     <p>Sei stato riconosciuto come <?php echo $row->Username; ?></p>
                     <p>Sarai reindirizzato alla pagina principale tra 5 secondi</p>
                 </div>
-          <?php } if(isset($_POST["remember"])) {
+          <?php } else // Password is incorrect
+                handleInputError("Username o password errati");
+           if(isset($_POST["remember"])) {
                     $expiration = time() + (365 * 24 * 60 * 60);
                     $expirationString = date("Y-m-d H:i:s", $expiration);
                     setcookie("user", $row->Username . '|' . $expirationString, $expiration, "/"); // cookie expires in 1 year
