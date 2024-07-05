@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var editButton = document.getElementById("editButton");
     var changePasswordButton = document.getElementById("changePasswordButton");
     editButton.addEventListener('click', function(event) {
-        var oldDocument = document;
         var values = document.querySelectorAll(".values");
 
         // Replace spans with input to edit data
@@ -26,12 +25,14 @@ document.addEventListener("DOMContentLoaded", function() {
         cancelButton.className = "deleteButton";
         var changePasswordButton = document.getElementById("changePasswordButton");
         changePasswordButton.replaceWith(cancelButton);
+        var changePasswordLink = document.getElementById("changePasswordLink");
+        changePasswordLink.href = "";
 
         // Hide delete password button
         var deleteButton = document.getElementById("deleteButton");
         deleteButton.style.display = "none";
         
-        // Add event listener to save buttonn and send new data to server
+        // Add event listener to save button and send new data to server
         saveButton.addEventListener('click', function(event) {
             var inputs = document.querySelectorAll("input");
             var data = {};
@@ -58,15 +59,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     });
                 }
                 else {
-                    document = oldDocument;
                     location.reload();
                 }
             });
-        });
-        // Add event listener to cancel button
-        cancelButton.addEventListener('click', function(event) {
-            document = oldDocument;
-            location.reload();
         });
     });
 });

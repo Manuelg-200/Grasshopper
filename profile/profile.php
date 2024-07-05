@@ -49,7 +49,7 @@
             </div>
             <div class="buttonsContainer">
                 <button id="editButton" class="editButton">Modifica dati</button>
-                <a href="/Grasshopper/profile/editPasswordForm.php"><button id="changePasswordButton" class="editButton">Cambia password</button></a>
+                <a id="changePasswordLink" href="/Grasshopper/profile/editPasswordForm.php"><button id="changePasswordButton" class="editButton">Cambia password</button></a>
             </div>
             <div class="buttonsContainer">
                 <button id="deleteButton" class="deleteButton">Elimina account</button>
