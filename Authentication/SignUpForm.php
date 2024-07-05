@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="IT">
     <head>
-        <title>Tarsogno FC Sign Up form</title>
+        <title>Grasshopper Sign Up form</title>
         <link rel="stylesheet" type="text/css" href="../indexStyle.css"/>
         <link rel="stylesheet" type="text/css" href="LoginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
