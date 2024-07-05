@@ -6,7 +6,6 @@
         <link rel="stylesheet" type="text/css" href="../indexStyle.css"/>
         <link rel="stylesheet" type="text/css" href="LoginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
-        <script src="https://kit.fontawesome.com/4cf75b295a.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <?php include("../header.php"); ?>
