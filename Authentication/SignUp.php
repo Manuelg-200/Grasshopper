@@ -1,13 +1,28 @@
 <?php 
     session_start();
     $_SESSION = array();
+
     $username = $_POST["user"];
     $email = $_POST["email"];
     $passwd = $_POST["passwd"];
     $passwdconfirm = $_POST["passwdconfirm"];
 
-    // Insert user data into userdata table
     include '../DatabaseUtils/connect.php';
+
+    // Check if the username is already taken
+    $checkStmt = $conn->prepare("SELECT Username FROM userdata WHERE Username = ?");
+    $checkStmt->bind_param('s', $username);
+    $checkStmt->execute();
+    $checkResult = $checkStmt->get_result();
+    $checkStmt->close();
+    if($checkResult->num_rows > 0) {
+        $conn->close();
+        $_SESSION["takenUsername"] = "Username già in uso";
+        header("Location: SignUpForm.php");
+        exit;
+    }
+
+    // Insert user data into userdata table
     $stmt = $conn->prepare("INSERT INTO userdata (Username, Password, Email) VALUES (?, ?, ?)");
     $hashed_passwd = password_hash($passwd, PASSWORD_DEFAULT);
     $username = trim($username);

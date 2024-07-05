@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="IT">
     <head>
@@ -12,6 +13,12 @@
         <div class="LoginForm" id="LoginForm">
             <form method="post" action="SignUp.php">
                 <h1>Registrati</h1>
+                <?php if (!empty($_SESSION["takenUsername"])) { ?>
+                    <div class="input-error-login-box">
+                        <p><?php echo $_SESSION["takenUsername"]; ?></p>
+                    </div>
+                <?php unset($_SESSION["takenUsername"]); } ?>
+
                 <!-- Series of ifs to check if the user has already inserted incorrect data; -->
                 <label for="user">Username:</label><br>
                 <input type="text" id="Username" name="user" class="input"><br>
