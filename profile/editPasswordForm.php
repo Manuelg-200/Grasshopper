@@ -1,7 +1,4 @@
-<?php 
-    session_start();
-    $_SESSION = array();
-?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="IT">
@@ -9,12 +6,18 @@
         <title>Change password</title>
         <link rel="stylesheet" type="text/css" href="../indexStyle.css"/>
         <link rel="stylesheet" type="text/css" href="../Authentication/LoginStyle.css"/>
+        <meta name="viewport" content="width=device-width"/>
     </head>
     <body class="LoginFormPage">
         <?php include("../header.php"); ?>
         <div class="LoginForm">
             <form method ="post" action="editPassword.php">
                 <h1>Cambia password</h1>
+                <?php if (!empty($_SESSION["inputError"])) { ?>
+                    <div class="input-error-login-box">
+                        <p><?php echo $_SESSION["inputError"]; ?></p>
+                    </div>
+                <?php unset($_SESSION["inputError"]); } ?>
                 <label for="oldPassword">Vecchia password:</label><br>
                 <input type="password" id="oldPassword" name="oldPassword" class="input"><br>
                 <div class="input-error-message"><p></p></div> <!-- Useless div to mantain the structure of the form -->
