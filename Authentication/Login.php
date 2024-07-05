@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html lang="IT">
     <head>
-        <title>Login page</title>
+        <title>Pagina Login</title>
         <link rel="stylesheet" type="text/css" href="LoginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
