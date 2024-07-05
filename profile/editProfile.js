@@ -58,6 +58,9 @@ document.addEventListener("DOMContentLoaded", function() {
                         document.close();
                     });
                 }
+                else if(data.error == "takenUsername") {
+                    alert("Username già in uso");
+                }
                 else {
                     location.reload();
                 }
