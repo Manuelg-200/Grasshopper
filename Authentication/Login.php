@@ -21,7 +21,7 @@
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body class="LoginFormPage">
-        <?php // Check for user existance in database
+        <?php
         include '../DatabaseUtils/connect.php';
         if($DBerror) { ?>
             <div class="LoginForm">
