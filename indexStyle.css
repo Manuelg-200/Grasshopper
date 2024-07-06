@@ -21,13 +21,46 @@ header {
     background-color: rgb(117, 226, 161);
 }
 
-.ProductSlider {
+.ProductsContainer {
     border-style: solid;
     border-color: grey;
     border-width: 2px;
     border-radius: 10px;
     background-color: white;
     display: flex;
+    flex-direction: column;
+}
+
+.CategoryTitle {
+    margin: 20px;
+    font-size: 25px;
+    float: left;
+}
+
+.ProductSlider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Product {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 3px 10px;
+    height: 200px;
+    width: 150px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: gray;
+}
+
+.LeagueLogo {
+    width: 100px;
+    height: auto;
+    margin: 10px;
 }
 
 .Logo {

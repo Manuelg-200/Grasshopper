@@ -22,18 +22,23 @@
                 include("homepageFetch.php"); ?>
 
        <!-- Categorie/Campionati -->
-        <div class="ProductSlider">
-            <h1>Campionati</h1>
-            <div class="ProductContainer">
-                <img src="images/1.jpg" alt="1"/>
-                <h2>Maglia Home</h2>
-                <p>€50</p>
+        <div class="ProductsContainer">
+            <span><h1 class="CategoryTitle">Campionati</h1></span>
+            <div class="ProductSlider">
+            <?php for($i = 0; $i < $leagues_number; $i++) { ?>
+                <div class="Product">
+                    <a href="">
+                        <img class="LeagueLogo" src="<?php echo $leagues[$i]->logoPath; ?>" alt="Logo <?php echo $leagues[$i]->name; ?>"/>
+                    </a>
+                </div>
+            <?php } ?>
             </div>
         </div>
 
-        <div class="ProductSlider">
-            <h1>Nuovi Arrivi</h1>
-            <div class="ProductContainer">
+        <!-- Prodotti -->
+        <div class="ProductContainer">
+            <span><h1 class="CategoryTitle">I più venduti</h1></span>
+            <div class="ProductSlider">
                 <img src="images/2.jpg" alt="2"/>
                 <h2>Maglia Away</h2>
                 <p>€50</p>
