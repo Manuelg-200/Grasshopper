@@ -35,13 +35,22 @@
             </div>
         </div>
 
-        <!-- Prodotti -->
-        <div class="ProductContainer">
+        <!-- Prodotti più venduti -->
+        <div class="ProductsContainer">
             <span><h1 class="CategoryTitle">I più venduti</h1></span>
             <div class="ProductSlider">
-                <img src="images/2.jpg" alt="2"/>
-                <h2>Maglia Away</h2>
-                <p>€50</p>
+            <?php for($i = 0; $i < $best_selling_number; $i++) { ?>
+                <figure class="Product">
+                    <a href="">
+                        <img class="StadiumImage" src="<?php echo $best_selling[$i]->image_path; ?>" alt="Foto <?php echo $best_selling[$i]->Stadium; ?>"/>
+                    </a>
+                    <figcaption>
+                        <strong><?php echo $best_selling[$i]->game; ?></strong>
+                        <span><?php echo date('d/m/Y', strtotime($best_selling[$i]->date)); ?></span></br>
+                        <data><?php echo $best_selling[$i]->price; ?>€</data>
+                    </figcaption>
+            </figure>
+            <?php } ?>
             </div>
         </div>
 

@@ -10,3 +10,17 @@ $leagues = array();
 while($row = $result->fetch_object()) {
     array_push($leagues, $row);
 }
+
+// Get best selling products from database
+$stmt = $conn->prepare("SELECT * FROM products, stadiums WHERE stadium=name ORDER BY weeklySells DESC LIMIT 10");
+$stmt->execute();
+$result = $stmt->get_result();
+$stmt->close();
+$best_selling_number = $result->num_rows;
+$best_selling = array();
+while($row = $result->fetch_object()) {
+    array_push($best_selling, $row);
+}
+
+$conn->close();
+?>
