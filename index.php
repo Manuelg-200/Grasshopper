@@ -13,8 +13,7 @@
     <body>
        <?php include("header.php"); 
        include 'DatabaseUtils/connect.php';
-       if($DBerror) { 
-       var_dump($DBerror); ?>
+       if($DBerror) { ?>
             <div class="ProductSlider">
                 <h1>Errore!</h1>
                 <p>Impossibile connettersi al server</p>
