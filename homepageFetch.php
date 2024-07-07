@@ -22,5 +22,16 @@ while($row = $result->fetch_object()) {
     array_push($best_selling, $row);
 }
 
+// Get discounted products from database
+$stmt = $conn->prepare("SELECT * FROM products, stadiums WHERE stadium=name AND discount is not null ORDER BY discount DESC LIMIT 10");
+$stmt->execute();
+$result = $stmt->get_result();
+$stmt->close();
+$discounted_number = $result->num_rows;
+$discounted = array();
+while($row = $result->fetch_object()) {
+    array_push($discounted, $row);
+}
+
 $conn->close();
 ?>
