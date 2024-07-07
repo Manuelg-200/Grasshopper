@@ -33,5 +33,16 @@ while($row = $result->fetch_object()) {
     array_push($discounted, $row);
 }
 
+// Get new products from database
+$stmt = $conn->prepare("SELECT * FROM products, stadiums WHERE stadium=name ORDER BY date DESC LIMIT 10");
+$stmt->execute();
+$result = $stmt->get_result();
+$stmt->close();
+$new_products_number = $result->num_rows;
+$new_products = array();
+while($row = $result->fetch_object()) {
+    array_push($new_products, $row);
+}
+
 $conn->close();
 ?>

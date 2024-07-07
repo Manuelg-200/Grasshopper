@@ -79,12 +79,27 @@
             </div>
         </div>
 
-        <div class="ProductSlider">
-            <h1>Pezzi unici</h1>
-            <div class="ProductContainer">
-                <img src="images/4.jpg" alt="4"/>
-                <h2>Sciarpa</h2>
-                <p>€20</p>
+        <!-- Nuovi prodotti -->
+        <div class="ProductsContainer">
+            <span><h1 class="CategoryTitle">Nuovi Arrivi</h1></span>
+            <div class="ProductSlider">
+                <?php for($i = 0; $i < $new_products_number; $i++) { ?>
+                    <figure class="Product">
+                        <a href="">
+                            <img class="StadiumImage" src="<?php echo $new_products[$i]->image_path; ?>" alt="Foto <?php echo $new_products[$i]->Stadium; ?>"/>
+                        </a>
+                        <figcaption>
+                            <strong><?php echo $new_products[$i]->game; ?></strong>
+                            <span><?php echo date('d/m/Y', strtotime($new_products[$i]->date)); ?></span></br>
+                            <?php if($new_products[$i]->discount != null) { ?>
+                                <?php $discountAmount = $new_products[$i]->price * ($new_products[$i]->discount / 100); ?>
+                                <del><?php echo $new_products[$i]->price; ?>€</del><strong><?php echo number_format($new_products[$i]->price - $discountAmount, 2, '.', '') ?>€</strong>
+                            <?php } else { ?>
+                                <data><?php echo $new_products[$i]->price; ?>€</data>
+                            <?php } ?>
+                        </figcaption>
+                    </figure>
+                <?php } ?>
             </div>
         </div>
         <?php } ?>
