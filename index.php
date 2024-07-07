@@ -140,6 +140,7 @@
                         </figure>
                     <?php } ?>                                
                 </div>
+                <button class="SliderButton Next">></button>
             </div>
          </div>
         <?php } ?>
