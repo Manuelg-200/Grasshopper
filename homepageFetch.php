@@ -12,7 +12,7 @@ while($row = $result->fetch_object()) {
 }
 
 // Get best selling products from database
-$stmt = $conn->prepare("SELECT * FROM products, stadiums WHERE stadium=name ORDER BY weeklySells DESC LIMIT 10");
+$stmt = $conn->prepare("SELECT * FROM products, stadiums WHERE stadium=name and UniquePiece=0  ORDER BY weeklySells DESC LIMIT 10");
 $stmt->execute();
 $result = $stmt->get_result();
 $stmt->close();
@@ -23,7 +23,7 @@ while($row = $result->fetch_object()) {
 }
 
 // Get discounted products from database
-$stmt = $conn->prepare("SELECT * FROM products, stadiums WHERE stadium=name AND discount is not null ORDER BY discount DESC LIMIT 10");
+$stmt = $conn->prepare("SELECT * FROM products, stadiums WHERE stadium=name AND discount is not null AND UniquePiece=0 ORDER BY discount DESC LIMIT 10");
 $stmt->execute();
 $result = $stmt->get_result();
 $stmt->close();
@@ -34,7 +34,7 @@ while($row = $result->fetch_object()) {
 }
 
 // Get new products from database
-$stmt = $conn->prepare("SELECT * FROM products, stadiums WHERE stadium=name ORDER BY date DESC LIMIT 10");
+$stmt = $conn->prepare("SELECT * FROM products, stadiums WHERE stadium=name and UniquePiece=0 ORDER BY date DESC LIMIT 10");
 $stmt->execute();
 $result = $stmt->get_result();
 $stmt->close();
@@ -42,6 +42,18 @@ $new_products_number = $result->num_rows;
 $new_products = array();
 while($row = $result->fetch_object()) {
     array_push($new_products, $row);
+}
+
+
+// Get unique pieces from database
+$stmt = $conn->prepare("SELECT * FROM products, stadiums WHERE stadium=name AND UniquePiece=1 ORDER BY date DESC LIMIT 10");
+$stmt->execute();
+$result = $stmt->get_result();
+$stmt->close();
+$unique_pieces_number = $result->num_rows;
+$unique_pieces = array();
+while($row = $result->fetch_object()) {
+    array_push($unique_pieces, $row);
 }
 
 $conn->close();

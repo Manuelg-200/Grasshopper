@@ -20,6 +20,7 @@
                 <p>Impossibile connettersi al server</p>
                 <p>Per favore riprova più tardi</p>
             </div>  <?php } else {
+                // Get stuff from databse in here
                 include("homepageFetch.php"); ?>
 
        <!-- Categorie/Campionati -->
@@ -54,8 +55,8 @@
                             <figcaption>
                                 <strong><?php echo $best_selling[$i]->game; ?></strong>
                                 <span><?php echo date('d/m/Y', strtotime($best_selling[$i]->date)); ?></span></br>
-                                <?php if($best_selling[$i]->discount != null) { ?>
-                                    <?php $discountAmount = $best_selling[$i]->price * ($best_selling[$i]->discount / 100); ?>
+                                <?php if($best_selling[$i]->discount != null) {
+                                    $discountAmount = $best_selling[$i]->price * ($best_selling[$i]->discount / 100); ?>
                                     <del><?php echo $best_selling[$i]->price; ?>€</del><strong><?php echo number_format($best_selling[$i]->price - $discountAmount, 2, '.', '') ?>€</strong>
                                 <?php } else { ?>
                                     <data><?php echo $best_selling[$i]->price; ?>€</data>
@@ -106,8 +107,8 @@
                             <figcaption>
                                 <strong><?php echo $new_products[$i]->game; ?></strong>
                                 <span><?php echo date('d/m/Y', strtotime($new_products[$i]->date)); ?></span></br>
-                                <?php if($new_products[$i]->discount != null) { ?>
-                                    <?php $discountAmount = $new_products[$i]->price * ($new_products[$i]->discount / 100); ?>
+                                <?php if($new_products[$i]->discount != null) { 
+                                    $discountAmount = $new_products[$i]->price * ($new_products[$i]->discount / 100); ?>
                                     <del><?php echo $new_products[$i]->price; ?>€</del><strong><?php echo number_format($new_products[$i]->price - $discountAmount, 2, '.', '') ?>€</strong>
                                 <?php } else { ?>
                                     <data><?php echo $new_products[$i]->price; ?>€</data>
@@ -119,6 +120,28 @@
                 <button class="SliderButton Next">></button>
             </div>
         </div>
+
+        <!-- Pezzi Unici -->
+         <div class="ProductsContainer">
+            <span><h1 class="CategoryTitle">Pezzi Unici</h1></span>
+            <div class="ProductSlider">
+                <button class="SliderButton Prev"><</button>
+                <div class="SliderWrapper">
+                    <?php for($i = 0; $i < $unique_pieces_number; $i++) { ?>
+                        <figure class="Product">
+                            <a href="">
+                                <img class="StadiumImage" src="<?php echo $unique_pieces[$i]->image_path; ?>" alt="Foto <?php echo $unique_pieces[$i]->Stadium; ?>"/>
+                            </a>
+                            <figcaption>
+                                <strong><?php echo $unique_pieces[$i]->game; ?></strong>
+                                <span><?php echo date('d/m/Y', strtotime($unique_pieces[$i]->date)); ?></span></br>
+                                <strong><?php echo $unique_pieces[$i]->price; ?>€</strong>
+                            </figcaption>
+                        </figure>
+                    <?php } ?>                                
+                </div>
+            </div>
+         </div>
         <?php } ?>
     </body>
 </html>
