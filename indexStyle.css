@@ -39,9 +39,30 @@ header {
 }
 
 .ProductSlider {
+    overflow: hidden;
+    position: relative;
+}
+
+.SliderWrapper {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.SliderButton {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    height: auto;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.Prev {
+    left: 0;
+}
+
+.Next {
+    right: 0;
 }
 
 .Product {
@@ -53,7 +74,7 @@ header {
     text-align: center;
     margin: 0 10px 3px 10px;
     height: 200px;
-    width: auto;
+    width: 20%;
     border-style: solid;
     border-width: 2px;
     border-radius: 10px;
