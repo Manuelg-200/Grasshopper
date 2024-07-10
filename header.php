@@ -18,7 +18,7 @@
             <a href="/Grasshopper/index.php"><button class="navBarButton">Home</button></a>
             <a href=""><button class="navBarButton">Chi Siamo</button></a>
             <a href=""><button class="navBarButton">Contatti</button></a>
-            <a href=""><button class="navBarButton">Negozio</button></a>
+            <a href="/Grasshopper/shop/shop.php"><button class="navBarButton">Negozio</button></a>
             <?php if(isset($_COOKIE["user"])) { ?>
                 <a href="/Grasshopper/profile/profile.php"><button class="navBarButton">Profilo</button></a>
                 <span class="accessControlButtonContainer">
