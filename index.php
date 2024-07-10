@@ -16,9 +16,9 @@ $_SESSION = array();
             <p>Benvenuto su Grasshopper, il negozio online dove puoi trovare vere e proprie zolle di terreno dagli stadi più importanti,
                 toccati dai campioni del calcio mondiale.<p>
             <p>Se sei un appassionato di calcio, non puoi perderti questa occasione unica di portare a casa letteralmente un pezzo di storia!</p>
-            <p>Trova la zolla perfetta per te</p>
-            <form class="searchBarContainer">
-                <input type="text" placeholder="Cerca..." class="searchBar"></input>
+            <p style="text-align: center;">Trova la zolla perfetta per te:</p>
+            <form class="HomepageSearchBarContainer">
+                <input type="text" placeholder="Cerca..." class="HomepageSearchBar"></input>
                 <button type="submit" class="searchButton"><i class="fa-solid fa-magnifying-glass"></i></Button>
             </form>
         </div>
