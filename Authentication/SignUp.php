@@ -10,6 +10,7 @@
     include '../DatabaseUtils/connect.php';
 
     // Check if the username is already taken
+    $username = strtolower(trim($username));
     $checkStmt = $conn->prepare("SELECT Username FROM userdata WHERE Username = ?");
     $checkStmt->bind_param('s', $username);
     $checkStmt->execute();
