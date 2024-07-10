@@ -50,7 +50,7 @@
                     <?php for($i = 0; $i < $best_selling_number; $i++) { ?>
                         <figure class="Product">
                             <a href="">
-                                <img class="StadiumImage" src="/Grasshopper/<?php echo $best_selling[$i]->image_path; ?>" alt="Foto <?php echo $best_selling[$i]->Stadium; ?>"/>
+                                <img class="StadiumImage" src="/Grasshopper/<?php echo $best_selling[$i]->image_path; ?>" alt="Foto <?php echo $best_selling[$i]->stadium; ?>"/>
                             </a>
                             <figcaption>
                                 <strong><?php echo $best_selling[$i]->game; ?></strong>
@@ -78,7 +78,7 @@
                     <?php for($i = 0; $i < $discounted_number; $i++) { ?>
                         <figure class="Product">
                             <a href="">
-                                <img class="StadiumImage" src="/Grasshopper/<?php echo $discounted[$i]->image_path; ?>" alt="Foto <?php echo $discounted[$i]->Stadium; ?>"/>
+                                <img class="StadiumImage" src="/Grasshopper/<?php echo $discounted[$i]->image_path; ?>" alt="Foto <?php echo $discounted[$i]->stadium; ?>"/>
                             </a>
                             <figcaption>
                                 <strong><?php echo $discounted[$i]->game; ?></strong>
@@ -102,7 +102,7 @@
                     <?php for($i = 0; $i < $new_products_number; $i++) { ?>
                         <figure class="Product">
                             <a href="">
-                                <img class="StadiumImage" src="/Grasshopper/<?php echo $new_products[$i]->image_path; ?>" alt="Foto <?php echo $new_products[$i]->Stadium; ?>"/>
+                                <img class="StadiumImage" src="/Grasshopper/<?php echo $new_products[$i]->image_path; ?>" alt="Foto <?php echo $new_products[$i]->stadium; ?>"/>
                             </a>
                             <figcaption>
                                 <strong><?php echo $new_products[$i]->game; ?></strong>
@@ -130,7 +130,7 @@
                     <?php for($i = 0; $i < $unique_pieces_number; $i++) { ?>
                         <figure class="Product">
                             <a href="">
-                                <img class="StadiumImage" src="/Grasshopper/<?php echo $unique_pieces[$i]->image_path; ?>" alt="Foto <?php echo $unique_pieces[$i]->Stadium; ?>"/>
+                                <img class="StadiumImage" src="/Grasshopper/<?php echo $unique_pieces[$i]->image_path; ?>" alt="Foto <?php echo $unique_pieces[$i]->stadium; ?>"/>
                             </a>
                             <figcaption>
                                 <strong><?php echo $unique_pieces[$i]->game; ?></strong>
