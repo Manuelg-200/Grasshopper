@@ -8,6 +8,7 @@
     <head>
         <title>Grasshopper negozio</title>
         <link rel="stylesheet" type="text/css" href="../indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="shopStyle.css"/>
         <script src="SliderScript.js"></script>
         <meta name="viewport" content="width=device-width"/>
     </head>
