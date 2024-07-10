@@ -20,7 +20,7 @@
                 <p>Impossibile connettersi al server</p>
                 <p>Per favore riprova più tardi</p>
             </div>  <?php } else {
-                // Get stuff from databse in here
+                // Get stuff from database in here
                 include("shopFetch.php"); ?>
 
        <!-- Categorie/Campionati -->
