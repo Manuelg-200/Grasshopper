@@ -3,6 +3,7 @@
 <html lang="IT">
     <head>
         <title>Grasshopper Header</title>
+        <link rel="stylesheet" type="text/css" href="/Grasshopper/headerStyle.css"/>
         <script src="https://kit.fontawesome.com/4cf75b295a.js" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width"/>
     </head>
