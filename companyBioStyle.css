@@ -1,0 +1,50 @@
+html {
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: tahoma;
+    background-color: rgb(91, 177, 177);
+}
+
+h1 {
+    text-align: center;
+}
+
+.WhoWeAreContainer {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px 10px 20px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    background-color: white;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1)), url("https://www.repstatic.it/content/nazionale/img/2023/05/05/181331376-cb53a2cc-4e41-4551-8914-9dc1d95dabb5.jpg");
+    background-size: cover;
+    background-position: right center;
+}
+
+.WhoWeAreContainer.second {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1)), url("https://media.gettyimages.com/id/1314018295/it/foto/rapinatore-che-irrompe-in-casa.jpg?s=612x612&w=gi&k=20&c=P42czUpJV3X8kFcGxg6YgW0k3GKqr0-zgfonX8DRE_E=");
+    background-size: cover;
+    background-position: left center;
+}
+
+.second > div {
+    margin-left: auto;
+}
+
+.WhoWeAreContainer > div {
+    width: 40%;
+}
+
+.WhoWeAreContainer p {
+    text-align: center;
+    font-size: 18px;
+    flex: 1;
+}
