@@ -35,10 +35,9 @@ $_SESSION = array();
         </div>
 
         <div class="ContentContainer right">
-            <p>Non perdere l'occasione di portare a casa un pezzo di storia!</p>
-            <button>Visita il negozio</button>
+            <p style="text-align: center";>Non perdere l'occasione di portare a casa un pezzo di storia!</p>
+            <a href="shop/shop.php" style="text-decoration: none;"><button class="shopButton">Visita il negozio</button></a>
         </div>
-        
-
+        <script src="homepageAnimation.js" type="text/javascript"></script>
     </body>
 </html>

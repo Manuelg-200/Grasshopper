@@ -7,6 +7,7 @@ body {
     padding: 0;
     font-family: tahoma;
     background-color: rgb(91, 177, 177);
+    overflow-x: hidden; /* Prevents horizontal scrollbar when divs are hidden */
 }
 
 h1 {
@@ -15,6 +16,8 @@ h1 {
 }
 
 .ContentContainer {
+    opacity: 0;
+    transition: all 1s ease-out;
     background-color: white;
     padding: 30px;
     margin-bottom: 20px;
@@ -23,11 +26,13 @@ h1 {
 .left {
     margin-left: 20px;
     margin-right: 40%;
+    transform: translateX(-100%);
 }
 
 .right {
     margin-right: 20px;
     margin-left: 40%;
+    transform: translateX(100%);
 }
 
 .HomepageSearchBarContainer {
@@ -48,4 +53,25 @@ h1 {
     margin: 0;
     padding: 0;
     border: none
+}
+
+.shopButton, .shopButton a {
+    display: block;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(131, 130, 214);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2% 10% 2% 10%;
+    font-weight: bolder;
+    background-color: rgb(173, 172, 222);
+}
+
+.shopButton:hover {
+    cursor: pointer;
+    background-color: rgb(172, 223, 228);
+}
+
+.shopButton:active {
+    background-color: rgb(148, 146, 245);
 }
