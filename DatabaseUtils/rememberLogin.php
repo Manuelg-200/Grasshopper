@@ -4,7 +4,6 @@
         $cookie = explode('|', $_COOKIE["remember"]);
         $email = $cookie[0];
         $expiration = $cookie[1];
-        if($expiration > date("Y-m-d H:i:s")) {
+        if($expiration > date("Y-m-d H:i:s"))
             $_SESSION["LoggedIn"] = $email;
-        }
     }
