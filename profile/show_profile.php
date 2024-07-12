@@ -48,6 +48,22 @@
                     <span class="label">Email</span>
                     <span id="Email" class="values"><?php echo $row->Email; ?></span>
                 </div>
+                <div class="labelContainer">
+                    <span class="label">Indirizzo</span>
+                    <span id="Address" class="values"><?php echo $row->Address ?></span>
+                </div>
+                <div class="labelContainer">
+                    <span class="label">Città</span>
+                    <span id="City" class="values"><?php echo $row->City ?></span>
+                </div>
+                <div class="labelContainer">
+                    <span class="label">CAP</span>
+                    <span id="CAP" class="values"><?php echo $row->PostCode ?></span>
+                </div>
+                <div class="labelContainer">
+                    <span class="label">Squadra preferita</span>
+                    <span id="FavoriteTeam" class="values"><?php echo $row->FavTeam ?></span>
+                </div>
             </div>
             <div class="buttonsContainer">
                 <button id="editButton" class="editButton">Modifica dati</button>
