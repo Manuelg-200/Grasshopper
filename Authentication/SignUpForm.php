@@ -22,7 +22,7 @@
                 <h1>Registrati</h1>
                 <?php if (!empty($_SESSION["takenEmail"])) { ?>
                     <div class="input-error-login-box">
-                        <p>Email già utilizzata</p>
+                        <p>Email già in uso</p>
                     </div>
                 <?php unset($_SESSION["takenEmail"]); } ?>
 

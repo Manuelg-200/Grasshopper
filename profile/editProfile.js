@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 data[input.id] = input.value;
             });
             console.log(data);
-            fetch('editProfile.php', {
+            fetch('update_profile.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         document.close();
                     });
                 }
-                else if(data.error == "takenUsername") {
-                    alert("Username già in uso");
+                else if(data.error == "takenEmail") {
+                    alert("Email già in uso");
                 }
                 else {
                     location.reload();

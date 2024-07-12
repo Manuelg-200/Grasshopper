@@ -58,11 +58,11 @@
                 </div>
                 <div class="labelContainer">
                     <span class="label">CAP</span>
-                    <span id="CAP" class="values"><?php echo $row->PostCode ?></span>
+                    <span id="PostCode" class="values"><?php echo $row->PostCode ?></span>
                 </div>
                 <div class="labelContainer">
                     <span class="label">Squadra preferita</span>
-                    <span id="FavoriteTeam" class="values"><?php echo $row->FavTeam ?></span>
+                    <span id="FavTeam" class="values"><?php echo $row->FavTeam ?></span>
                 </div>
             </div>
             <div class="buttonsContainer">
