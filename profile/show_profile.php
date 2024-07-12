@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    if(!isset($_SESSION["LoggedIn"])) {
+        header("Location: /Grasshopper/index.php");
+        exit;
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="IT">
