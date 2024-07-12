@@ -52,7 +52,7 @@
            if(($_POST["remember"])) {
                     $expiration = time() + (365 * 24 * 60 * 60);
                     $expirationString = date("Y-m-d H:i:s", $expiration);
-                    setcookie("user", $row->Username . '|' . $expirationString, $expiration, "/"); // cookie expires in 1 year
+                    setcookie("remember", $email . '|' . $expirationString, $expiration, "/"); // cookie expires in 1 year
           } else
                     $_SESSION["LoggedIn"] = $email; ?>
                 <meta http-equiv="refresh" content="5; url=../index.php">

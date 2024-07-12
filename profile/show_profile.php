@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    include '../DatabaseUtils/rememberLogin.php';
     if(!isset($_SESSION["LoggedIn"])) {
         header("Location: /Grasshopper/index.php");
         exit;

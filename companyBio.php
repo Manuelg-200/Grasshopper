@@ -1,3 +1,5 @@
+<?php include 'DatabaseUtils/rememberLogin.php'; ?>
+
 <!DOCTYPE html>
 <html lang="IT">
     <head>

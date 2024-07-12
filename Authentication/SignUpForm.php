@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    include '../DatabaseUtils/rememberLogin.php';
+    if(isset($_SESSION["LoggedIn"])) {
+        header("Location: ../index.php");
+        exit;
+    } 
+?>
 
 <!DOCTYPE html>
 <html lang="IT">

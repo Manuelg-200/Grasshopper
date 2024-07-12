@@ -1,6 +1,8 @@
-<?php session_start();
-
+<?php 
+    session_start();
+    include 'DatabaseUtils/rememberLogin.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="IT">
     <head>
