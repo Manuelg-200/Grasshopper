@@ -11,40 +11,45 @@
     <body>
         <?php include("../header.php"); ?>
         <div class="LoginForm" id="LoginForm">
-            <form method="post" action="SignUp.php">
+            <form action="registration.php" method="post">
                 <h1>Registrati</h1>
-                <?php if (!empty($_SESSION["takenUsername"])) { ?>
+                <?php if (!empty($_SESSION["takenEmail"])) { ?>
                     <div class="input-error-login-box">
-                        <p><?php echo $_SESSION["takenUsername"]; ?></p>
+                        <p>Email già utilizzata</p>
                     </div>
-                <?php unset($_SESSION["takenUsername"]); } ?>
+                <?php unset($_SESSION["takenEmail"]); } ?>
 
-                <!-- Series of ifs to check if the user has already inserted incorrect data; -->
-                <label for="user">Username:</label><br>
-                <input type="text" id="Username" name="user" class="input"><br>
+                <label for="firstname">Nome:</label><br>
+                <input type="text" name ="firstname" id="Firstname" class="input"><br>
                 <div class="input-error-message">
-                    <p id="UsernameError"></p>
+                    <p id="FirstnameError"></p>
+                </div>
+
+                <label for="lastname">Cognome:</label><br>
+                <input type="text" name="lastname" id="Lastname" class="input"><br>
+                <div class="input-error-message">
+                    <p id="LastnameError"></p>
                 </div>
 
                 <label for="email">Email:</label><br>
-                <input type="email" id="Email" name="email" class="input"><br>
+                <input type="email" name="email" id="Email" class="input"><br>
                 <div class="input-error-message">
                     <p id="EmailError"></p>
                 </div>
 
-                <label for="passwd">Password:</label><br>
-                <input type="password" id="Password" name="passwd" class="input"><br>
+                <label for="pass">Password:</label><br>
+                <input type="password" name="pass" id="Password" class="input"><br>
                 <div class="input-error-message">
                     <p id="PasswordError"></p>
                 </div>
 
-                <label for="passwdconfirm">Conferma Password:</label><br>
-                <input type="password" id="passwdconfirm" name="passwdconfirm" class="input"><br>
+                <label for="confirm">Conferma Password:</label><br>
+                <input type="password" name="confirm" id="PasswdConfirm" class="input"><br>
                 <div class="input-error-message">
-                    <p id="passwdconfirmError"></p>
+                    <p id="PasswdConfirmError"></p>
                 </div>
 
-                <div class="mainButtonContainer"><input id="submit" type="submit" value="Registrati" class="mainButton"></input></div>
+                <div class="mainButtonContainer"><input type="submit" name="submit" value="Registrati" id="Submit" class="mainButton"></input></div>
             </form>
             <div class="Separator"><span class="or">Hai già un account?</span></div>
             <div class="AlternativeButtonContainer"><a href="LoginForm.php"><button class="AlternativeButton">Accedi</button></a></div>

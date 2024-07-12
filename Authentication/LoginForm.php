@@ -6,25 +6,24 @@
         <title>Grasshopper Login form</title>
         <link rel="stylesheet" type="text/css" href="../indexStyle.css"/>
         <link rel="stylesheet" type="text/css" href="LoginStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="../profile/profileStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
         <?php include("../header.php"); ?>
         <div class="LoginForm">
-            <form method="post" action="Login.php">
+            <form action="login.php" method="post">
                 <h1>Accedi</h1>
                 <?php if (!empty($_SESSION["loginError"])) { ?>
                     <div class="input-error-login-box">
                         <p><?php echo $_SESSION["loginError"]; ?></p>
                     </div>
                 <?php unset($_SESSION["loginError"]); } ?>
-                <label for="user">Username o email:</label><br>
-                <input type="text" id="user" name="user" class="input"><br>
-                <label for="passwd">Password:</label><br>
-                <input type="password" id="passwd" name="passwd" class="input">
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="Email" class="input"><br>
+                <label for="pass">Password:</label><br>
+                <input type="password" name="pass" id="Passwd" class="input">
                 <div class="rememberContainer">
-                    <input type ="checkbox" id="remember" name="remember" value="remember">
+                    <input type ="checkbox" name="remember" id="Remember" value="true">
                     <label for="remember" class="rememberLabel">Ricordami</label>
                 </div><br>
                 <!-- to do -->

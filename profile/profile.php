@@ -1,7 +1,4 @@
-<?php
-    session_start();
-    $_SESSION = array();
-?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="IT">
@@ -14,13 +11,15 @@
         <?php include("../header.php");
         include("../DatabaseUtils/connect.php");
         if($DBerror) header("Location: profileError.php");
-        $stmt = $conn->prepare("SELECT Username, Email, Name, Surname FROM userdata WHERE Username = ?");
-        $originalUsername = explode('|', $_COOKIE["user"])[0];
-        $stmt->bind_param('s', $originalUsername);
+
+        $stmt = $conn->prepare("SELECT * FROM userdata WHERE Email = ?");
+        // Email is saved in the session variable
+        $stmt->bind_param('s', $_SESSION["LoggedIn"]);
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
         $conn->close();
+
         if($result->num_rows == 1) // User exists
             $row = $result->fetch_object();
        else header("Location: profileError.php"); // User doesn't exists ?> 
@@ -37,10 +36,6 @@
                 <div class="labelContainer">
                     <span class="label">Cognome</span>
                     <span id="Surname" class="values"><?php echo $row->Surname ?></span>
-                </div>
-                <div class="labelContainer">
-                    <span class="label">Username</span>
-                    <span id="Username" class="values"><?php echo $row->Username; ?></span>
                 </div>
                 <div class="labelContainer">
                     <span class="label">Email</span>

@@ -1,41 +1,71 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var userInput = document.getElementById("Username");
+    var firstnameInput = document.getElementById("Firstname");
+    var lastnameInput = document.getElementById("Lastname");
     var emailInput = document.getElementById("Email");
     var passwordInput = document.getElementById("Password");
-    var confirmPasswordInput = document.getElementById("passwdconfirm");
-    var submitButton = document.getElementById("submit");
+    var confirmPasswordInput = document.getElementById("PasswdConfirm");
+    var submitButton = document.getElementById("Submit");
 
     // Function that disables the submit button if there are errors
     function DisableSubmitButtonCheck() {
-        if(userInput.className == "input input-error" || emailInput.className == "input input-error" || passwordInput.className == "input input-error" || confirmPasswordInput.className == "input input-error")
+        if(firstnameInput.className == "input input-error" || lastnameInput.className == "input input-error" || emailInput.className == "input input-error" || passwordInput.className == "input input-error" || confirmPasswordInput.className == "input input-error")
             submitButton.disabled = true;
         else
             submitButton.disabled = false;
     }
 
-    // Check if username is valid
-    userInput.addEventListener('input', function(event) {
-        var error = document.getElementById("UsernameError");
+    // Check if firstname is valid
+    firstnameInput.addEventListener('input', function(event) {
+        var error = document.getElementById("FirstnameError");
         var errorMessage = "";
         var hasError = false;
+        var nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
 
-        if(userInput.value.length == 0) {
-            errorMessage = "Username non inserito";
+        if(this.value.length == 0) {
+            errorMessage = "Nome non inserito";
             hasError = true;
         }
-        else if(userInput.value.length > 20) {
-            errorMessage = "Username troppo lungo";
+        else if(this.value.length > 40) {
+            errorMessage = "Nome troppo lungo";
             hasError = true;
         }
-        else if(userInput.value.match(/[^a-zA-Z0-9]/)) {
+        // Regex to validate names, only letters and spaces allowed
+        else if(!this.value.match(nameRegex)) {
             errorMessage = "Caratteri speciali non ammessi";
             hasError = true;
         }
         
-        userInput.className = hasError ? "input input-error" : "input input-ok";
+        this.className = hasError ? "input input-error" : "input input-ok";
         DisableSubmitButtonCheck();
         error.textContent = errorMessage;
     });
+
+    // Check if lastname is valid
+    lastnameInput.addEventListener('input', function(event) {
+        var error = document.getElementById("LastnameError");
+        var errorMessage = "";
+        var hasError = false;
+        var nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+
+        if(this.value.length == 0) {
+            errorMessage = "Cognome non inserito";
+            hasError = true;
+        }
+        else if(this.value.length > 40) {
+            errorMessage = "Cognome troppo lungo";
+            hasError = true;
+        }
+        // Regex to validate names, only letters and spaces allowed
+        else if(!this.value.match(nameRegex)) {
+            errorMessage = "Caratteri speciali non ammessi";
+            hasError = true;
+        }
+
+        this.className = hasError ? "input input-error" : "input input-ok";
+        DisableSubmitButtonCheck();
+        error.textContent = errorMessage;
+    });
+
 
     // Check if email is valid
     emailInput.addEventListener('input', function(event) {
@@ -44,20 +74,20 @@ document.addEventListener("DOMContentLoaded", function() {
         var hasError = false;
         var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
-        if(emailInput.value.length == 0) {
+        if(this.value.length == 0) {
             errorMessage = "Email non inserita";
             hasError = true;
         }
-        else if(!emailInput.value.match(emailRegex)) {
+        else if(!this.value.match(emailRegex)) {
             errorMessage = "Email non valida";
             hasError = true;
         }
-        else if(emailInput.value.length > 40) {
+        else if(this.value.length > 40) {
             errorMessage = "Email troppo lunga";
             hasError = true;
         }
         
-        emailInput.className = hasError ? "input input-error" : "input input-ok";
+        this.className = hasError ? "input input-error" : "input input-ok";
         DisableSubmitButtonCheck();
         error.textContent = errorMessage;
     });
@@ -65,45 +95,45 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check if password is valid
     passwordInput.addEventListener('input', function(event) {
         var PasswordError = document.getElementById("PasswordError");
-        var confirmError = document.getElementById("passwdconfirmError");
+        var confirmError = document.getElementById("PasswdConfirmError");
         var errorMessage = "";
         var hasError = false;
 
-        if(passwordInput.value.length == 0) {
+        if(this.value.length == 0) {
             errorMessage = "Password non inserita";
             hasError = true;
         }
-        if(passwordInput.value.length < 6) {
+        if(this.value.length < 6) {
             errorMessage = "Password troppo corta";
             hasError = true;
         }
-        if(passwordInput.value.length > 40) {
+        if(this.value.length > 40) {
             errorMessage = "Password troppo lunga";
             hasError = true;
         }
 
         // Password confirmation check if the password field is edited
-        if(confirmPasswordInput.value != passwordInput.value) {
+        if(confirmPasswordInput.value != this.value) {
             confirmError.textContent = "Le password non coincidono";
             confirmPasswordInput.className = "input input-error";
         }
         
-        passwordInput.className = hasError ? "input input-error" : "input input-ok";
+        this.className = hasError ? "input input-error" : "input input-ok";
         DisableSubmitButtonCheck();
         PasswordError.textContent = errorMessage;
     });
 
     // Check for password confirmation
     confirmPasswordInput.addEventListener('input', function(event) {
-        var error = document.getElementById("passwdconfirmError");
+        var error = document.getElementById("PasswdConfirmError");
 
-        if(confirmPasswordInput.value != passwordInput.value) {
+        if(this.value != passwordInput.value) {
             error.textContent = "Le password non coincidono";
-            confirmPasswordInput.className = "input input-error";
+            this.className = "input input-error";
         }
         else {
             error.textContent = "";
-            confirmPasswordInput.className = "input input-ok";
+            this.className = "input input-ok";
         }
         DisableSubmitButtonCheck();
     });

@@ -19,7 +19,7 @@
             <a href="/Grasshopper/index.php"><button class="navBarButton">Home</button></a>
             <a href="/Grasshopper/companyBio.php"><button class="navBarButton">Chi Siamo</button></a>
             <a href="/Grasshopper/shop/shop.php"><button class="navBarButton">Negozio</button></a>
-            <?php if(isset($_COOKIE["user"])) { ?>
+            <?php if(isset($_SESSION["LoggedIn"])) { ?>
                 <a href="/Grasshopper/profile/profile.php"><button class="navBarButton">Profilo</button></a>
                 <span class="accessControlButtonContainer">
                     <a href="/Grasshopper/Authentication/Logout.php"><button class="navBarButton">Logout</button></a> 
