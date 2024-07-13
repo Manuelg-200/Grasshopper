@@ -7,7 +7,7 @@
     $passwd = $_POST["pass"];
     $passwdconfirm = $_POST["confirm"];
 
-    include '../DatabaseUtils/connect.php';
+    include 'DatabaseUtils/connect.php';
 
     // Check if the email is already taken
     $checkStmt = $conn->prepare("SELECT Email FROM userdata WHERE Email = ?");

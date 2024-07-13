@@ -1,8 +1,8 @@
 <?php 
     session_start(); 
-    include '../DatabaseUtils/rememberLogin.php';
+    include 'DatabaseUtils/rememberLogin.php';
     if(!isset($_SESSION["LoggedIn"])) {
-        header("Location: /Grasshopper/index.php");
+        header("Location: index.php");
         exit;
     }
 ?>
@@ -11,12 +11,12 @@
 <html lang="IT">
     <head>
         <title>Change password</title>
-        <link rel="stylesheet" type="text/css" href="../indexStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="../Authentication/LoginStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="LoginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body class="LoginFormPage">
-        <?php include("../header.php"); ?>
+        <?php include("header.php"); ?>
         <div class="LoginForm">
             <form method ="post" action="editPassword.php">
                 <h1>Cambia password</h1>

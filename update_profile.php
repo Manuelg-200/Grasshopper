@@ -9,7 +9,7 @@
     }
 
     $data = json_decode(file_get_contents('php://input'), true);
-    include '../DatabaseUtils/connect.php';
+    include 'DatabaseUtils/connect.php';
     if($DBerror) handleError($conn, null, "DBError");
     
     // Get email from session variable

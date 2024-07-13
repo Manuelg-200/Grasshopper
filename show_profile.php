@@ -1,8 +1,8 @@
 <?php 
     session_start();
-    include '../DatabaseUtils/rememberLogin.php';
+    include 'DatabaseUtils/rememberLogin.php';
     if(!isset($_SESSION["LoggedIn"])) {
-        header("Location: /Grasshopper/index.php");
+        header("Location: index.php");
         exit;
     }
 ?>
@@ -11,12 +11,12 @@
 <html lang="IT">
     <head>
         <title>Profile page</title>
-        <link rel="stylesheet" type="text/css" href="../indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
         <link rel="stylesheet" type="text/css" href="profileStyle.css"/>
     </head>
     <body>
-        <?php include("../header.php");
-        include("../DatabaseUtils/connect.php");
+        <?php include("header.php");
+        include("DatabaseUtils/connect.php");
         if($DBerror) header("Location: profileError.php");
 
         $stmt = $conn->prepare("SELECT * FROM userdata WHERE Email = ?");

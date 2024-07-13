@@ -21,7 +21,7 @@
     </head>
     <body class="LoginFormPage">
         <?php
-        include '../DatabaseUtils/connect.php';
+        include 'DatabaseUtils/connect.php';
         if($DBerror) { ?>
             <div class="LoginForm">
                 <h1>Errore!</h1>
@@ -55,7 +55,7 @@
                     setcookie("remember", $email . '|' . $expirationString, $expiration, "/"); // cookie expires in 1 year
           } else
                     $_SESSION["LoggedIn"] = $email; ?>
-                <meta http-equiv="refresh" content="5; url=../index.php">
+                <meta http-equiv="refresh" content="5; url=index.php">
           <?php exit;
         }
          // User doesn't exist

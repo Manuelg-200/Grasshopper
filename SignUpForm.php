@@ -1,8 +1,8 @@
 <?php 
     session_start(); 
-    include '../DatabaseUtils/rememberLogin.php';
+    include 'DatabaseUtils/rememberLogin.php';
     if(isset($_SESSION["LoggedIn"])) {
-        header("Location: ../index.php");
+        header("Location: index.php");
         exit;
     } 
 ?>
@@ -11,12 +11,12 @@
 <html lang="IT">
     <head>
         <title>Grasshopper Sign Up form</title>
-        <link rel="stylesheet" type="text/css" href="../indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
         <link rel="stylesheet" type="text/css" href="LoginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
-        <?php include("../header.php"); ?>
+        <?php include("header.php"); ?>
         <div class="LoginForm" id="LoginForm">
             <form action="registration.php" method="post">
                 <h1>Registrati</h1>
