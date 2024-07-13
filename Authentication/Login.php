@@ -49,7 +49,7 @@
                 </div>
           <?php } else // Password is incorrect
                 handleInputError("Email o password errati");
-           if(($_POST["remember"])) {
+           if((isset($_POST["remember"]))) {
                     $expiration = time() + (365 * 24 * 60 * 60);
                     $expirationString = date("Y-m-d H:i:s", $expiration);
                     setcookie("remember", $email . '|' . $expirationString, $expiration, "/"); // cookie expires in 1 year
