@@ -58,8 +58,8 @@
         ?>
         <div class="LoginForm">
             <h1>Password cambiata con successo!</h1>
-            <p>Sarai reindirizzato alla pagina principale tra 5 secondi</p>
-            <meta http-equiv="refresh" content="5; url=../index.php">
+            <p>Sarai reindirizzato alla pagina del profilo tra 5 secondi</p>
+            <meta http-equiv="refresh" content="5; url=show_profile.php">
         </div>
     </body>
 </html>
