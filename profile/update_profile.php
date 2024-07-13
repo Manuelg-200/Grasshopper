@@ -1,4 +1,5 @@
 <?php
+    session_start();
     function handleError($conn, $stmt, $message) {
         if($stmt)
             $stmt->close();
@@ -11,8 +12,8 @@
     include '../DatabaseUtils/connect.php';
     if($DBerror) handleError($conn, null, "DBError");
     
-    // Cookie is composed of the username and the expiration date
-    list($currentEmail, $Expiration) = explode('|', $_COOKIE["remember"]);
+    // Get email from session variable
+    $currentEmail = $_SESSION["LoggedIn"];
 
     // Check if the username is already taken if it's different from the current one
     if ($data["Email"] != $currentEmail) {
@@ -31,9 +32,14 @@
     $stmt->bind_param("ssssssss", $data["Name"], $data["Surname"], $data["Email"], $data["Address"], $data["City"], $data["PostCode"], $data["FavTeam"], $currentEmail);
     $stmt->execute();
     if($stmt->affected_rows == 0) handleError($conn, $stmt, "DBError");
-    // If the email has been changed, update the cookie
-    if($data["Email"] != $currentEmail)
-        setcookie("remember", $data["Email"] . '|' . $expiration, $expiration, "/");
+    // If the email has been changed, update the session variable and the cookie if it's present
+    if($data["Email"] != $currentEmail) {
+        $_SESSION["LoggedIn"] = $data["Email"];
+        if(isset($_COOKIE["remember"])) {
+            $expiration = explode('|', $_COOKIE["remember"])[1];
+            setcookie("remember", $data["Email"] . '|' . $expiration, $expiration, "/");
+        }
+    }
     $stmt->close();
     $conn->close();
     echo json_encode(array("error" => "ok"));
