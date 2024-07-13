@@ -67,10 +67,10 @@
             </div>
             <div class="buttonsContainer">
                 <button id="editButton" class="editButton">Modifica dati</button>
-                <a id="changePasswordLink" href="/Grasshopper/profile/editPasswordForm.php"><button id="changePasswordButton" class="editButton">Cambia password</button></a>
+                <a id="changePasswordLink" href="editPasswordForm.php"><button id="changePasswordButton" class="editButton">Cambia password</button></a>
             </div>
             <div class="buttonsContainer">
-                <button id="deleteButton" class="deleteButton">Elimina account</button>
+                <a id="deletePasswordLink" href="deleteProfile.php"><button id="deleteButton" class="deleteButton">Elimina account</button></a>
             </div>
         </div>
         <script src="editProfile.js"></script>

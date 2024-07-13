@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     var editButton = document.getElementById("editButton");
     var changePasswordButton = document.getElementById("changePasswordButton");
+    var deleteButton = document.getElementById("deleteButton");
+
+    // Edit password button implementation
     editButton.addEventListener('click', function(event) {
         var values = document.querySelectorAll(".values");
 
@@ -17,22 +20,20 @@ document.addEventListener("DOMContentLoaded", function() {
         var saveButton = document.createElement("button");
         saveButton.textContent = "Salva";
         saveButton.className = "editButton";
-        editButton.replaceWith(saveButton);
+        this.replaceWith(saveButton);
 
         // Replace change password button with cancel button
         var cancelButton = document.createElement("button");
         cancelButton.textContent = "Annulla";
         cancelButton.className = "deleteButton";
-        var changePasswordButton = document.getElementById("changePasswordButton");
         changePasswordButton.replaceWith(cancelButton);
         var changePasswordLink = document.getElementById("changePasswordLink");
         changePasswordLink.href = "";
 
         // Hide delete password button
-        var deleteButton = document.getElementById("deleteButton");
         deleteButton.style.display = "none";
         
-        // Add event listener to save button and send new data to server
+        // Add event listener to save button and send new data to server when clicked
         saveButton.addEventListener('click', function(event) {
             var inputs = document.querySelectorAll("input");
             var data = {};
