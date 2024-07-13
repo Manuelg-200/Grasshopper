@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    include '../DatabaseUtils/rememberLogin.php';
+    if(!isset($_SESSION["LoggedIn"])) {
+        header("Location: /Grasshopper/index.php");
+        exit;
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="IT">
@@ -17,7 +24,7 @@
                     <div class="input-error-login-box">
                         <p><?php echo $_SESSION["inputError"]; ?></p>
                     </div>
-                <?php unset($_SESSION["inputError"]); } ?>
+                    <?php unset($_SESSION["inputError"]); } ?>
                 <label for="oldPassword">Vecchia password:</label><br>
                 <input type="password" id="oldPassword" name="oldPassword" class="input"><br>
                 <div class="input-error-message"><p></p></div> <!-- Useless div to mantain the structure of the form -->
