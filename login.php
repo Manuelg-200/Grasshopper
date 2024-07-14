@@ -7,8 +7,10 @@
         exit;
     }
 
-    // Check for existance of post method fields
+    // Check for existance of post method fields and check email validity
     $email = $_POST["email"];
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+        handleInputError("Email non valida");
     $password = $_POST["pass"];
     if (empty($email) || empty($password))
         handleInputError("Email o password non inseriti"); ?>

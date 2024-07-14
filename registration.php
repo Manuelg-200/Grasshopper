@@ -22,11 +22,14 @@
         exit;
     }
 
-    // Insert user data into userdata table
-    $stmt = $conn->prepare("INSERT INTO userdata (Name, Surname, Email, Password) VALUES (?, ?, ?, ?)");
-    $hashed_passwd = password_hash($passwd, PASSWORD_DEFAULT);
+    // Data sanitization
     $firstname = ucfirst(strtolower(trim($firstname)));
     $lastname = ucfirst(strtolower(trim($lastname)));
+    $email = trim($email);
+    $passwd = password_hash($passwd, PASSWORD_DEFAULT);
+
+    // Insert user data into userdata table
+    $stmt = $conn->prepare("INSERT INTO userdata (Name, Surname, Email, Password) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssss", $firstname, $lastname, $email, $hashed_passwd);
     $stmt->execute();
     if($stmt->affected_rows == 0)
