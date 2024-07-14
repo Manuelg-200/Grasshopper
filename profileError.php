@@ -2,8 +2,8 @@
 <html lang="IT">
     <head>
         <title>Errore pagina profilo</title>
-        <link rel="stylesheet" type="text/css" href="profileStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/profileStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
     </head>
     <body>
         <div class="ErrorContainer">

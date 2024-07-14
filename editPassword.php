@@ -19,7 +19,7 @@
 <html lang="IT">
     <head>
         <title>Cambio Password</title>
-        <link rel="stylesheet" type="text/css" href="loginStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/loginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body class="LoginFormPage">

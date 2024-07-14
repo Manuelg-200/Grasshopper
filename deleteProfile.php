@@ -30,8 +30,8 @@
 <html lang="IT">
     <head>
         <title>Profilo cancellato con successo</title>
-        <link rel="stylesheet" type="text/css" href="profileStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/profileStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
     </head>
     <body>
         <div class="ErrorContainer">

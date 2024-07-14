@@ -11,8 +11,8 @@
 <html lang="IT">
     <head>
         <title>Grasshopper Sign Up form</title>
-        <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="LoginStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/loginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
@@ -61,7 +61,7 @@
             <div class="Separator"><span class="or">Hai già un account?</span></div>
             <div class="AlternativeButtonContainer"><a href="LoginForm.php"><button class="AlternativeButton">Accedi</button></a></div>
         </div>
-        <script src="SignUpForm_errorMessage.js"></script>
+        <script src="scripts/SignUpForm_errorMessage.js"></script>
     </body>
 </html>
 

@@ -19,8 +19,8 @@
 <html lang="IT">
     <head>
         <title>Profile page</title>
-        <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="profileStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/profileStyle.css"/>
     </head>
     <body>
         <?php include("header.php");
@@ -81,7 +81,7 @@
                 <a id="deletePasswordLink" href="deleteProfile.php"><button id="deleteButton" class="deleteButton">Elimina account</button></a>
             </div>
         </div>
-        <script src="editProfile.js"></script>
+        <script src="scripts/editProfile.js"></script>
     </body>
 </html>
    

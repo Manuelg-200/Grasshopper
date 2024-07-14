@@ -7,7 +7,7 @@
 <html lang="IT">
     <head>
         <title>Grasshopper Chi Siamo</title>
-        <link rel="stylesheet" type="text/css" href="companyBioStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/companyBioStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>

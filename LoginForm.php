@@ -11,8 +11,8 @@
 <html lang="IT">
     <head>
         <title>Grasshopper Login form</title>
-        <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="LoginStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/loginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>

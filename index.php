@@ -7,7 +7,7 @@
 <html lang="IT">
     <head>
         <Title>Grasshopper pagina principale, presentazione, vendita prato partite di calcio</Title>
-        <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
@@ -39,6 +39,6 @@
             <p style="text-align: center";>Non perdere l'occasione di portare a casa un pezzo di storia!</p>
             <a href="shop/shop.php" style="text-decoration: none;"><button class="shopButton">Visita il negozio</button></a>
         </div>
-        <script src="homepageAnimation.js" type="text/javascript"></script>
+        <script src="scripts/homepageAnimation.js" type="text/javascript"></script>
     </body>
 </html>

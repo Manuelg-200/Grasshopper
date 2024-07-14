@@ -18,7 +18,7 @@
 <html lang="IT">
     <head>
         <title>Pagina Login</title>
-        <link rel="stylesheet" type="text/css" href="LoginStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/loginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body class="LoginFormPage">

@@ -11,8 +11,8 @@
 <html lang="IT">
     <head>
         <title>Change password</title>
-        <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="LoginStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/loginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body class="LoginFormPage">
@@ -45,6 +45,6 @@
             </form>
             <a href="show_profile.php"><button class="deleteButton">Annulla</button></a>
         </div>
-        <script src="editPasswordForm_errorMessage.js"></script>
+        <script src="scripts/editPasswordForm_errorMessage.js"></script>
     </body>
 </html>
