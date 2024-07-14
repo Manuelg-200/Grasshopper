@@ -28,13 +28,13 @@ body {
     display: inline-block;
 }
 
-.labelContainer {
+.fieldContainer {
     padding : 5% 0 5% 4%;
     border-bottom-style: solid;
     border-bottom-width: 1px;
 }
 
-.label {
+label {
     display: inline-block;
     width: 90px;
     font-weight: bold;

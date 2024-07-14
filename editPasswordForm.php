@@ -43,7 +43,7 @@
 
                 <div class="mainButtonContainer"><input id="submit" type="submit" value="Cambia password" class="mainButton"></input></div>  
             </form>
-            <a href="profile.php"><button class="deleteButton">Annulla</button></a>
+            <a href="show_profile.php"><button class="deleteButton">Annulla</button></a>
         </div>
         <script src="editPasswordForm_errorMessage.js"></script>
     </body>

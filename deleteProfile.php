@@ -28,7 +28,8 @@
 ?>
 <!DOCTYPE html>
 <html lang="IT">
-    <head>Profilo cancellato con successo</head>
+    <head>
+        <title>Profilo cancellato con successo</title>
         <link rel="stylesheet" type="text/css" href="profileStyle.css"/>
         <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
     </head>

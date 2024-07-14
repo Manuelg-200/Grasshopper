@@ -5,6 +5,14 @@
         header("Location: index.php");
         exit;
     }
+    
+    // Create a small script that shows an alert if the error variable is already set, which means the user attempted to update the profile with invalid data
+    if(isset($_SESSION["update_profileError"])) {
+        echo '<script type="text/javascript">';
+        echo 'alert("' . $_SESSION["update_profileError"] . '");';
+        echo '</script>';
+        unset($_SESSION["update_profileError"]);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -36,33 +44,33 @@
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" alt="Generic avatar">
             </div>
             <div class="dataContainer">
-                <div class="labelContainer">
-                    <span class="label">Nome</span>
-                    <span id="Name" class="values"><?php echo $row->Name ?></span>
+                <div class="fieldContainer">
+                    <label for="firstname">Nome</label>
+                    <span class="values"><?php echo $row->Name ?></span>
                 </div>
-                <div class="labelContainer">
-                    <span class="label">Cognome</span>
-                    <span id="Surname" class="values"><?php echo $row->Surname ?></span>
+                <div class="fieldContainer">
+                    <label for="lastname">Cognome</label>
+                    <span class="values"><?php echo $row->Surname ?></span>
                 </div>
-                <div class="labelContainer">
-                    <span class="label">Email</span>
-                    <span id="Email" class="values"><?php echo $row->Email; ?></span>
+                <div class="fieldContainer">
+                    <label for="email">Email</label>
+                    <span class="values"><?php echo $row->Email; ?></span>
                 </div>
-                <div class="labelContainer">
-                    <span class="label">Indirizzo</span>
-                    <span id="Address" class="values"><?php echo $row->Address ?></span>
+                <div class="fieldContainer">
+                    <label for="address">Indirizzo</label>
+                    <span class="values"><?php echo $row->Address ?></span>
                 </div>
-                <div class="labelContainer">
-                    <span class="label">Città</span>
-                    <span id="City" class="values"><?php echo $row->City ?></span>
+                <div class="fieldContainer">
+                    <label for="city">Città</label>
+                    <span class="values"><?php echo $row->City ?></span>
                 </div>
-                <div class="labelContainer">
-                    <span class="label">CAP</span>
-                    <span id="PostCode" class="values"><?php echo $row->PostCode ?></span>
+                <div class="fieldContainer">
+                    <label for="postcode">CAP</label>
+                    <span class="values"><?php echo $row->PostCode ?></span>
                 </div>
-                <div class="labelContainer">
-                    <span class="label">Squadra preferita</span>
-                    <span id="FavTeam" class="values"><?php echo $row->FavTeam ?></span>
+                <div class="fieldContainer">
+                    <label for="favteam">Squadra preferita</label>
+                    <span class="values"><?php echo $row->FavTeam ?></span>
                 </div>
             </div>
             <div class="buttonsContainer">

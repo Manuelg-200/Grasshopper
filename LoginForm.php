@@ -26,9 +26,9 @@
                     </div>
                 <?php unset($_SESSION["loginError"]); } ?>
                 <label for="email">Email:</label><br>
-                <input type="email" name="email" id="Email" class="input"><br>
+                <input type="email" name="email" class="input"><br>
                 <label for="pass">Password:</label><br>
-                <input type="password" name="pass" id="Passwd" class="input">
+                <input type="password" name="pass" class="input">
                 <div class="rememberContainer">
                     <input type ="checkbox" name="remember" id="Remember" value="true">
                     <label for="remember" class="rememberLabel">Ricordami</label>
