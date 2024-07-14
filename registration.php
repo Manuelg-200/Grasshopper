@@ -30,7 +30,7 @@
 
     // Insert user data into userdata table
     $stmt = $conn->prepare("INSERT INTO userdata (Name, Surname, Email, Password) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $firstname, $lastname, $email, $hashed_passwd);
+    $stmt->bind_param("ssss", $firstname, $lastname, $email, $passwd);
     $stmt->execute();
     if($stmt->affected_rows == 0)
         $DBerror = true;
