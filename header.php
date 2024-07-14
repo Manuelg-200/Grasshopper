@@ -10,9 +10,9 @@
     <body>
         <header>
             <span><a href="/Grasshopper/index.php"><img src="/Grasshopper/grasshopper_logo.png" alt="Logo raffigurante un grillo" class="Logo"></img></a></span>
-            <form class="searchBarContainer">
-                <input type="text" placeholder="Cerca..." class="searchBar"></input>
-                <button type="submit" class="searchButton"><i class="fa-solid fa-magnifying-glass"></i></Button>
+            <form action="/Grasshopper/search.php" method="post" class="searchBarContainer">
+                <input type="text" name="search" placeholder="Cerca..." class="searchBar"></input>
+                <input type="submit" class="searchButton"><i class="fa-solid fa-magnifying-glass"></i></input>
             </form>
         </header>
         <nav>
@@ -31,5 +31,6 @@
                 </span>
             <?php } ?>
         </nav>
+        <script src="/Grasshopper/scripts/searchCheck.js"></script>
     </body>
 </html>
