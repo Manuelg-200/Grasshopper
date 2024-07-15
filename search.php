@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $submitted = $_POST["search"];
     $searchValue = strtolower(trim($submitted));
 
