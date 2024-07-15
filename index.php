@@ -18,9 +18,9 @@
                 toccati dai campioni del calcio mondiale.<p>
             <p>Se sei un appassionato di calcio, non puoi perderti questa occasione unica di portare a casa letteralmente un pezzo di storia!</p>
             <p style="text-align: center;">Trova la zolla perfetta per te:</p>
-            <form class="HomepageSearchBarContainer">
-                <input type="text" placeholder="Cerca..." class="HomepageSearchBar"></input>
-                <button type="submit" class="searchButton"><i class="fa-solid fa-magnifying-glass"></i></Button>
+            <form action="/Grasshopper/search.php" method="post" class="HomepageSearchBarContainer">
+                <input type="text" name="search" placeholder="Cerca..." class="searchBar"></input>
+                <button type="submit" class="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
 
