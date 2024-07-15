@@ -82,3 +82,17 @@
     height: auto;
     margin: 10px;
 }
+
+/* Search page style */
+.NothingFoundText {
+    margin: 20px;
+    font-size: 21px;
+    text-align: center;
+}
+
+.SearchResults {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}

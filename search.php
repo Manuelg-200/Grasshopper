@@ -41,26 +41,28 @@
                 <div class="ProductsContainer">
                     <h1>Risultati ricerca per "<?php echo $searchValue; ?>"</h1>
                     <?php if(count($result) == 0) { ?>
-                        <p>Nessun risultato trovato</p>
-                    <?php } else {
-                        for($i = 0; $i < count($result); $i++) { ?>
-                            <figure class="Product">
-                                <a href="">
-                                    <img class="StadiumImage" src="/Grasshopper/<?php echo $result[$i]->image_path; ?>" alt="Foto <?php echo $result[$i]->stadium; ?>"/>
-                                </a>
-                                <figcaption>
-                                    <strong><?php echo $result[$i]->game; ?></strong>
-                                    <span><?php echo date('d/m/Y', strtotime($result[$i]->date)); ?></span>
-                                    <?php if($result[$i]->discount != null) {
-                                        $discountAmount = $result[$i]->price * ($result[$i]->discount / 100); ?>
-                                        <del><?php echo $result[$i]->price; ?>€</del><strong><?php echo number_format($result[$i]->price - $discountAmount, 2, '.', '') ?>€</strong>
-                                    <?php } else { ?>
-                                        <data><?php echo $result[$i]->price; ?>€</strong>
-                                    <?php } ?>
-                                </figcaption>
-                            </figure>
-                        <?php }
-                    } ?>
+                        <p class="NothingFoundText">Nessun risultato trovato</p>
+                    <?php } else { ?>
+                        <div class="SearchResults">
+                            <?php for($i = 0; $i < count($result); $i++) { ?>
+                                <figure class="Product">
+                                    <a href="">
+                                        <img class="StadiumImage" src="/Grasshopper/<?php echo $result[$i]->image_path; ?>" alt="Foto <?php echo $result[$i]->stadium; ?>"/>
+                                    </a>
+                                    <figcaption>
+                                        <strong><?php echo $result[$i]->game; ?></strong>
+                                        <span><?php echo date('d/m/Y', strtotime($result[$i]->date)); ?></span></br>
+                                        <?php if($result[$i]->discount != null) {
+                                            $discountAmount = $result[$i]->price * ($result[$i]->discount / 100); ?>
+                                            <del><?php echo $result[$i]->price; ?>€</del><strong><?php echo number_format($result[$i]->price - $discountAmount, 2, '.', '') ?>€</strong>
+                                        <?php } else { ?>
+                                            <data><?php echo $result[$i]->price; ?>€</strong>
+                                        <?php } ?>
+                                    </figcaption>
+                                </figure>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
                 </div>
         <?php } ?>  
     </body>
