@@ -1,3 +1,12 @@
+<?php 
+    // Parse cart cookie if it exists
+    $cartItems = array();
+    if(isset($_COOKIE["cart"])) {
+        $cartValue = urldecode($_COOKIE["cart"]);
+        $cartItems = explode(',', $cartValue);
+    }
+?>
+
 <!-- Factorization of the header -->
 <!DOCTYPE html>
 <html lang="IT">
@@ -14,6 +23,13 @@
                 <input type="text" name="search" placeholder="Cerca..." class="searchBar"></input>
                 <button type="submit" class="searchButton" aria-label="Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
             </form>
+            <a href="/Grasshopper/shop/cart.php" class="cartLink">
+            <?php if(count($cartItems) == 0) {?>
+                <i class="fa-solid fa-cart-shopping fa-lg" aria-label="Carrello" id="headerCart"></i>
+            <?php } else {?>
+                <i class="fa-solid fa-<?php echo count($cartItems); ?> fa-lg" aria-label="Carrello" id="headerCart"></i>
+            <?php } ?>
+            </a>
         </header>
         <nav>
             <a href="/Grasshopper/index.php"><button class="navBarButton">Home</button></a>

@@ -1,6 +1,11 @@
 <?php 
     session_start(); 
     include '../DatabaseUtils/rememberLogin.php';
+
+    function checkCart($item, $cartItems) {
+        // Cookie was parsed in the header file already
+        return in_array($item, $cartItems);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +15,8 @@
         <link rel="stylesheet" type="text/css" href="../styles/indexStyle.css"/>
         <link rel="stylesheet" type="text/css" href="shopStyle.css"/>
         <script src="SliderScript.js"></script>
+        <script src="shopCartScript.js"></script>
+        <script src="https://kit.fontawesome.com/4cf75b295a.js" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
@@ -43,6 +50,7 @@
         </div>
 
         <!-- Prodotti più venduti -->
+        <!-- Shopping cart icon id is the game name to be sent to the javascript script -->
         <div class="ProductsContainer">
             <span><h1 class="CategoryTitle">I più venduti</h1></span>
             <div class="ProductSlider">
@@ -61,6 +69,11 @@
                                     <del><?php echo $best_selling[$i]->price; ?>€</del><strong><?php echo number_format($best_selling[$i]->price - $discountAmount, 2, '.', '') ?>€</strong>
                                 <?php } else { ?>
                                     <data><?php echo $best_selling[$i]->price; ?>€</data>
+                                    <?php } ?>
+                                <?php if(!checkCart($best_selling[$i]->game, $cartItems)) { ?>
+                                    <span><i class="fa-solid fa-cart-shopping shoppingCart" aria-label="Aggiungi al carrello" id="<?php echo $best_selling[$i]->game ?>"></i></span>
+                                <?php } else { ?>
+                                    <span><i class="fa-solid fa-check shoppingCart" style="color: green;" aria-label="Rimuovi dal carrello" id="<?php echo $best_selling[$i]->game ?>"></i></span>
                                 <?php } ?>
                             </figcaption>
                         </figure>
@@ -86,6 +99,11 @@
                                 <span><?php echo date('d/m/Y', strtotime($discounted[$i]->date)); ?></span></br>
                                 <?php $discountAmount = $discounted[$i]->price * ($discounted[$i]->discount / 100); ?>
                                 <del><?php echo $discounted[$i]->price; ?>€</del><strong><?php echo number_format($discounted[$i]->price - $discountAmount, 2, '.', '') ?>€</strong>
+                                <?php if(!checkCart($discounted[$i]->game, $cartItems)) { ?>
+                                    <span><i class="fa-solid fa-cart-shopping shoppingCart" aria-label="Aggiungi al carrello" id="<?php echo $discounted[$i]->game ?>"></i></span>
+                                <?php } else { ?>
+                                    <span><i class="fa-solid fa-check shoppingCart" style="color: green;" aria-label="Rimuovi dal carrello" id="<?php echo $discounted[$i]->game ?>"></i></span>
+                                <?php } ?>
                             </figcaption>
                         </figure>
                     <?php } ?>
@@ -114,6 +132,11 @@
                                 <?php } else { ?>
                                     <data><?php echo $new_products[$i]->price; ?>€</data>
                                 <?php } ?>
+                                <?php if(!checkCart($new_products[$i]->game, $cartItems)) { ?>
+                                    <span><i class="fa-solid fa-cart-shopping shoppingCart" aria-label="Aggiungi al carrello" id="<?php echo $new_products[$i]->game ?>"></i></span>
+                                <?php } else { ?>
+                                    <span><i class="fa-solid fa-check shoppingCart" style="color: green;" aria-label="Rimuovi dal carrello" id="<?php echo $new_products[$i]->game ?>"></i></span>
+                                <?php } ?>
                             </figcaption>
                         </figure>
                     <?php } ?>
@@ -137,7 +160,11 @@
                                 <strong><?php echo $unique_pieces[$i]->game; ?></strong>
                                 <span><?php echo date('d/m/Y', strtotime($unique_pieces[$i]->date)); ?></span></br>
                                 <strong><?php echo $unique_pieces[$i]->price; ?>€</strong>
-                            </figcaption>
+                                <?php if(!checkCart($unique_pieces[$i]->game, $cartItems)) { ?>
+                                    <span><i class="fa-solid fa-cart-shopping shoppingCart" aria-label="Aggiungi al carrello" id="<?php echo $unique_pieces[$i]->game ?>"></i></span>
+                                <?php } else { ?>
+                                    <span><i class="fa-solid fa-check shoppingCart" style="color: green;" aria-label="Rimuovi dal carrello" id="<?php echo $unique_pieces[$i]->game ?>"></i></span>
+                                <?php } ?>                            </figcaption>
                         </figure>
                     <?php } ?>                                
                 </div>
