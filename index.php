@@ -20,7 +20,7 @@
             <p style="text-align: center;">Trova la zolla perfetta per te:</p>
             <form action="/Grasshopper/search.php" method="post" class="HomepageSearchBarContainer">
                 <input type="text" name="search" placeholder="Cerca..." class="searchBar"></input>
-                <button type="submit" class="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button type="submit" class="searchButton" aria-label="Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
             </form>
         </div>
 

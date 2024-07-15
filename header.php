@@ -12,7 +12,7 @@
             <span><a href="/Grasshopper/index.php"><img src="/Grasshopper/grasshopper_logo.png" alt="Logo raffigurante un grillo" class="Logo"></img></a></span>
             <form action="/Grasshopper/search.php" method="post" class="searchBarContainer">
                 <input type="text" name="search" placeholder="Cerca..." class="searchBar"></input>
-                <button type="submit" class="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button type="submit" class="searchButton" aria-label="Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
             </form>
         </header>
         <nav>
