@@ -21,6 +21,7 @@
         <title>Profile page</title>
         <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
         <link rel="stylesheet" type="text/css" href="styles/profileStyle.css"/>
+        <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
         <?php include("header.php");
