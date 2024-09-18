@@ -1,8 +1,8 @@
 <?php 
     session_start(); 
-    include 'DatabaseUtils/rememberLogin.php';
+    include '../utils/rememberLogin.php';
     if(!isset($_SESSION["LoggedIn"])) {
-        header("Location: index.php");
+        header("Location: ../index.php");
         exit;
     }
 ?>
@@ -11,12 +11,12 @@
 <html lang="IT">
     <head>
         <title>Change password</title>
-        <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="styles/loginStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="../indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="../authentication/loginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body class="LoginFormPage">
-        <?php include("header.php"); ?>
+        <?php include("../header.php"); ?>
         <div class="LoginForm">
             <form method ="post" action="editPassword.php">
                 <h1>Cambia password</h1>
@@ -45,6 +45,6 @@
             </form>
             <a href="show_profile.php"><button class="deleteButton">Annulla</button></a>
         </div>
-        <script src="scripts/editPasswordForm_errorMessage.js"></script>
+        <script src="form_errorMessage.js"></script>
     </body>
 </html>

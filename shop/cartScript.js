@@ -21,9 +21,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     payButton.addEventListener('click', function() {
-        document.cookie = 'cart=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/';
-        alert('Pagamento effettuato con successo!');
-        alert('Non hai immesso nessun dato di pagamento? Non preoccuparti, i nostri operativi sono venuti a prendere il denaro di persona (senza farsi vedere)!');
-        location.href = '../index.php';
+        // Get the products in the cart from the cookie
+        var cookies = document.cookie.split(';').map(cookie => decodeURIComponent(cookie.trim()));
+        var cartCookie = cookies.find(cookie => cookie.startsWith('cart='));
+        var cart = decodeURIComponent(cartCookie.split('=')[1]).split(',');
+
+        var postData = {products : cart};
+
+        fetch('updateDatabase.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(postData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.cookie = 'cart=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/';
+            alert('Pagamento effettuato con successo!');
+            alert('Non hai immesso nessun dato di pagamento? Non preoccuparti, i nostri operativi sono venuti a prendere il denaro di persona (senza farsi vedere)!');
+            location.href = '../index.php';
+        })
+        .catch((error) => {
+            alert('Errore durante il pagamento. Riprova più tardi.');
+        });
     });
 });

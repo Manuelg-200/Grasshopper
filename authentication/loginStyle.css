@@ -24,7 +24,7 @@ body {
 
 label {
     display: block;
-    margin: 0 0 -4% 7%;
+    margin: 0 0 -2% 7%;
     text-align: left;
 }
 
@@ -51,7 +51,7 @@ label {
 
 .input-error-message {
     text-align: left;
-    color: red;
+    color: rgb(147, 0, 0);
     font-size: small;
     margin-left: 4%;
     margin-top: -9%;
@@ -146,7 +146,7 @@ input:focus {
     background-color: rgb(159, 156, 156);
 }
 
-/* For successfull login page */
+/* For successful login page */
 p {
     padding-left: 5%;
 }
@@ -202,4 +202,10 @@ p {
 
 .deleteButton:active {
     background-color: rgb(188, 143, 143);
+}
+
+/* For the addProductForm page */
+.UniquePieceCheck {
+    margin-right: 50%;
+    margin-bottom: 3%;
 }

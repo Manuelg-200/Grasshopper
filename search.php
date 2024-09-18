@@ -1,7 +1,14 @@
 <?php
     session_start();
-    $submitted = $_POST["search"];
+
+    $submitted = isset($_POST["search"]) ? $_POST["search"] : $_GET["category"];
+    $remove = isset($_GET["remove"]) ? $_GET["remove"] : false;
     $searchValue = strtolower(trim($submitted));
+
+    function checkCart($item, $cartItems) {
+        // Cookie was parsed in the header file already
+        return in_array($item, $cartItems);
+    }
 
     function search($value, $conn) {
         $value = "%".$value."%";
@@ -22,15 +29,16 @@
 <DOCTYPE html>
 <html lang="IT">
     <head>
-        <Title>Risultati ricerca per "<?php echo $search; ?>"</Title>
-        <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
+        <Title>Risultati ricerca per "<?php echo $searchValue; ?>"</Title>
+        <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
         <link rel="stylesheet" type="text/css" href="shop/shopStyle.css"/>
+        <script src="shop/shopCartScript.js"></script>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
         <?php 
             include("header.php");
-            include("DatabaseUtils/connect.php");
+            include("utils/connect.php");
             if($DBerror) { ?>
                 <div class="ProductSlider">
                     <h1>Errore!</h1>
@@ -38,7 +46,8 @@
                     <p>Per favore riprova più tardi</p>
                 </div>
             <?php } else { 
-                $result = search($searchValue, $conn); ?>
+                $result = search($searchValue, $conn); 
+                $conn->close() ?>
                 <div class="ProductsContainer">
                     <h1>Risultati ricerca per "<?php echo $searchValue; ?>"</h1>
                     <?php if(count($result) == 0) { ?>
@@ -58,7 +67,16 @@
                                             <del><?php echo $result[$i]->price; ?>€</del><strong><?php echo number_format($result[$i]->price - $discountAmount, 2, '.', '') ?>€</strong>
                                         <?php } else { ?>
                                             <data><?php echo $result[$i]->price; ?>€</strong>
-                                        <?php } ?>
+                                        <?php }
+                                        if($remove == "true") { ?>
+                                            <a href="/admin/remove.php?game=<?php echo $result[$i]->game; ?>"><button class="removeButton" id="<?php echo $result[$i]->game ?>">Rimuovi</button></a>
+                                        <?php } else {
+                                            if(!checkCart($result[$i]->game, $cartItems)) { ?>
+                                                <span><i class="fa-solid fa-cart-shopping shoppingCart" aria-label="Aggiungi al carrello" id="<?php echo $result[$i]->game ?>"></i></span>
+                                            <?php } else { ?>
+                                                <span><i class="fa-solid fa-check shoppingCart" style="color: green;" aria-label="Rimuovi dal carrello" id="<?php echo $result[$i]->game ?>"></i></span>
+                                            <?php }
+                                        } ?>
                                     </figcaption>
                                 </figure>
                             <?php } ?>

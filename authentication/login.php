@@ -18,12 +18,12 @@
 <html lang="IT">
     <head>
         <title>Pagina Login</title>
-        <link rel="stylesheet" type="text/css" href="styles/loginStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="loginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body class="LoginFormPage">
         <?php
-        include 'DatabaseUtils/connect.php';
+        include '../utils/connect.php';
         if($DBerror) { ?>
             <div class="LoginForm">
                 <h1>Errore!</h1>
@@ -33,8 +33,10 @@
                 <meta http-equiv="refresh" content="5; url=../index.php">
             </div> 
         <?php exit; }
+
+        // Get user data from DB
         $email = trim($email);
-        $stmt = $conn->prepare("SELECT * FROM userdata WHERE Email = ?");
+        $stmt = $conn->prepare("SELECT Name, Surname, AdminRole, Password FROM userdata WHERE Email = ?");
         $stmt->bind_param('s', $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -49,15 +51,17 @@
                     <p>Sei stato riconosciuto come <?php echo "$row->Name $row->Surname"; ?></p>
                     <p>Sarai reindirizzato alla pagina principale tra 5 secondi</p>
                 </div>
-          <?php } else // Password is incorrect
+            <?php } else // Password is incorrect
                 handleInputError("Email o password errati");
-           if((isset($_POST["remember"]))) {
-                    $expiration = time() + (365 * 24 * 60 * 60);
-                    $expirationString = date("Y-m-d H:i:s", $expiration);
-                    setcookie("remember", $email . '|' . $expirationString, $expiration, "/"); // cookie expires in 1 year
-          } else
-                    $_SESSION["LoggedIn"] = $email; ?>
-                <meta http-equiv="refresh" content="5; url=index.php">
+            if((isset($_POST["remember"]))) {
+                $expiration = time() + (365 * 24 * 60 * 60);
+                $expirationString = date("Y-m-d H:i:s", $expiration);
+                setcookie("remember", $email . '|' . $expirationString, $expiration, "/"); // cookie expires in 1 year
+            } else
+                $_SESSION["LoggedIn"] = $email; 
+            if($row->AdminRole)
+                $_SESSION["Admin"] = true; ?>
+            <meta http-equiv="refresh" content="5; url=../index.php">
           <?php exit;
         }
          // User doesn't exist

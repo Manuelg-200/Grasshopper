@@ -26,7 +26,7 @@
     $postCode = isset($_POST["postcode"]) ? $_POST["postcode"] : "";
     $favTeam = isset($_POST["favteam"]) ? $_POST["favteam"] : "";
 
-    include 'DatabaseUtils/connect.php';
+    include '../utils/connect.php';
     if($DBerror) handleDBError($conn, null, "DBError");
     
     // Get email from session variable

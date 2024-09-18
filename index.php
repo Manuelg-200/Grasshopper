@@ -1,13 +1,13 @@
 <?php 
     session_start();
-    include 'DatabaseUtils/rememberLogin.php';
+    include 'utils/rememberLogin.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="IT">
     <head>
         <Title>Grasshopper pagina principale, presentazione, vendita prato partite di calcio</Title>
-        <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="indexStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
@@ -18,9 +18,9 @@
                 toccati dai campioni del calcio mondiale.<p>
             <p>Se sei un appassionato di calcio, non puoi perderti questa occasione unica di portare a casa letteralmente un pezzo di storia!</p>
             <p style="text-align: center;">Trova la zolla perfetta per te:</p>
-            <form action="/Grasshopper/search.php" method="post" class="HomepageSearchBarContainer">
-                <input type="text" name="search" placeholder="Cerca..." class="searchBar"></input>
-                <button type="submit" class="searchButton" aria-label="Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+            <form action="search.php" method="post" class="HomepageSearchBarContainer">
+                <input type="text" name="search" placeholder="Cerca..." aria-label="Box ricerca" class="searchBar"></input>
+                <button type="submit" class="searchButton" aria-label="Cerca"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
             </form>
         </div>
 
@@ -39,6 +39,6 @@
             <p style="text-align: center";>Non perdere l'occasione di portare a casa un pezzo di storia!</p>
             <a href="shop/shop.php" style="text-decoration: none;"><button class="shopButton">Visita il negozio</button></a>
         </div>
-        <script src="scripts/homepageAnimation.js" type="text/javascript"></script>
+        <script src="homepageAnimation.js" type="text/javascript"></script>
     </body>
 </html>

@@ -19,14 +19,14 @@
 <html lang="IT">
     <head>
         <title>Cambio Password</title>
-        <link rel="stylesheet" type="text/css" href="styles/loginStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="../authentication/loginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body class="LoginFormPage">
         <?php 
             // Recover email from session variable
             $email = $_SESSION["LoggedIn"];
-            include("DatabaseUtils/connect.php");
+            include("../utils/connect.php");
             if($DBerror) {
                 header("Location: profileError.php");
                 exit;

@@ -1,6 +1,6 @@
 <?php 
     session_start(); 
-    include '../DatabaseUtils/rememberLogin.php';
+    include '../utils/rememberLogin.php';
 
     function checkCart($item, $cartItems) {
         // Cookie was parsed in the header file already
@@ -12,16 +12,15 @@
 <html lang="IT">
     <head>
         <title>Grasshopper negozio</title>
-        <link rel="stylesheet" type="text/css" href="../styles/indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="../indexStyle.css"/>
         <link rel="stylesheet" type="text/css" href="shopStyle.css"/>
         <script src="SliderScript.js"></script>
         <script src="shopCartScript.js"></script>
-        <script src="https://kit.fontawesome.com/4cf75b295a.js" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
        <?php include("../header.php"); 
-       include '../DatabaseUtils/connect.php';
+       include '../utils/connect.php';
        if($DBerror) { ?>
             <div class="ProductSlider">
                 <h1>Errore!</h1>
@@ -39,7 +38,7 @@
                 <div class="SliderWrapper">
                     <?php for($i = 0; $i < $leagues_number; $i++) { ?>
                         <div class="Product">
-                            <a href="">
+                            <a href="../search.php?category=<?php echo $leagues[$i]->name; ?>">
                                 <img class="LeagueLogo" src="/Grasshopper/<?php echo $leagues[$i]->logoPath; ?>" alt="Logo <?php echo $leagues[$i]->name; ?>"/>
                             </a>
                         </div>

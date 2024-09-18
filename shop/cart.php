@@ -1,8 +1,8 @@
 <?php 
     session_start();
-    include '../DatabaseUtils/rememberLogin.php';
+    include '../utils/rememberLogin.php';
     if(!isset($_SESSION["LoggedIn"])) {
-        header("Location: ../LoginForm.php");
+        header("Location: ../authentication/LoginForm.php");
         exit;
     }
 
@@ -36,14 +36,13 @@
 <html lang="IT">
     <head>
         <title>Carrello</title>
-        <link rel="stylesheet" type="text/css" href="../styles/indexStyle.css"/>
         <link rel="stylesheet" type="text/css" href="shopStyle.css"/>
         <script src="cartScript.js"></script>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
         <?php include("../header.php"); 
-        include '../DatabaseUtils/connect.php';
+        include '../utils/connect.php';
         if($DBerror) { ?>
             <div class="ProductSlider">
                 <h1>Errore!</h1>

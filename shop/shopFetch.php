@@ -23,7 +23,7 @@ while($row = $result->fetch_object()) {
 }
 
 // Get discounted products from database
-$stmt = $conn->prepare("SELECT * FROM products, stadiums WHERE stadium=name AND discount is not null AND UniquePiece=0 ORDER BY discount DESC LIMIT 10");
+$stmt = $conn->prepare("SELECT * FROM products, stadiums WHERE stadium=name AND discount is not null AND discount!=0 AND UniquePiece=0 ORDER BY discount DESC LIMIT 10");
 $stmt->execute();
 $result = $stmt->get_result();
 $stmt->close();

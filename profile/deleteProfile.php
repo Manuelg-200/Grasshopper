@@ -1,7 +1,7 @@
 <?php 
     session_start();
 
-    include 'DatabaseUtils/connect.php';
+    include '../utils/connect.php';
     if($DBerror) {
         header("Location: profileError.php");
         exit;
@@ -30,15 +30,15 @@
 <html lang="IT">
     <head>
         <title>Profilo cancellato con successo</title>
-        <link rel="stylesheet" type="text/css" href="styles/profileStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="profileStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="../indexStyle.css"/>
     </head>
     <body>
         <div class="ErrorContainer">
             <h1>Profilo eliminato con successo.</h1>
             <p>Ci dispiace che tu abbia deciso di lasciarci.</p>
             <p>Sarai reindirizzato alla pagina iniziale tra 5 secondi</p>
-            <meta http-equiv="refresh" content="5; url=index.php">
+            <meta http-equiv="refresh" content="5; url=../index.php">
         </div>
     </body>
 </html>

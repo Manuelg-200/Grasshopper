@@ -1,8 +1,9 @@
 <?php 
     session_start();
-    include 'DatabaseUtils/rememberLogin.php';
+    // Login check
+    include '../utils/rememberLogin.php';
     if(!isset($_SESSION["LoggedIn"])) {
-        header("Location: index.php");
+        header("Location: ../index.php");
         exit;
     }
     
@@ -13,28 +14,27 @@
         echo '</script>';
         unset($_SESSION["update_profileError"]);
     }
+
+    include("../utils/connect.php");
+    if($DBerror) header("Location: profileError.php");
+    $stmt = $conn->prepare("SELECT * FROM userdata WHERE Email = ?");
+    // Email is saved in the session variable
+    $stmt->bind_param('s', $_SESSION["LoggedIn"]);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $stmt->close();
+    $conn->close();
 ?>
 
 <!DOCTYPE html>
 <html lang="IT">
     <head>
         <title>Profile page</title>
-        <link rel="stylesheet" type="text/css" href="styles/indexStyle.css"/>
-        <link rel="stylesheet" type="text/css" href="styles/profileStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="profileStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>
-        <?php include("header.php");
-        include("DatabaseUtils/connect.php");
-        if($DBerror) header("Location: profileError.php");
-
-        $stmt = $conn->prepare("SELECT * FROM userdata WHERE Email = ?");
-        // Email is saved in the session variable
-        $stmt->bind_param('s', $_SESSION["LoggedIn"]);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-        $conn->close();
+        <?php include("../header.php");
 
         if($result->num_rows == 1) // User exists
             $row = $result->fetch_object();
@@ -82,7 +82,12 @@
                 <a id="deletePasswordLink" href="deleteProfile.php"><button id="deleteButton" class="deleteButton">Elimina account</button></a>
             </div>
         </div>
-        <script src="scripts/editProfile.js"></script>
+        <div class="ProfileContainer">
+            <h1>Storico Acquisti</h1>
+            <?php if($row->purchaseHistory == "") echo "<p>Non hai ancora effettuato acquisti</p>";
+            else ?> <p><?php echo $row->purchaseHistory ?></p>
+        </div>
+        <script src="editProfile.js"></script>
     </body>
 </html>
    

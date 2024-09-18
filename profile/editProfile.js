@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 input.type = "text";
             input.value = span.textContent;
             input.name = label.htmlFor;
+            input.id = label.htmlFor;
             span.replaceWith(input);
         });
 

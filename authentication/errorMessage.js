@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var firstnameInput = document.getElementById("Firstname");
-    var lastnameInput = document.getElementById("Lastname");
-    var emailInput = document.getElementById("Email");
-    var passwordInput = document.getElementById("Password");
-    var confirmPasswordInput = document.getElementById("PasswdConfirm");
+    var firstnameInput = document.getElementById("firstname");
+    var lastnameInput = document.getElementById("lastname");
+    var emailInput = document.getElementById("email");
+    var passwordInput = document.getElementById("pass");
+    var confirmPasswordInput = document.getElementById("confirm");
     var submitButton = document.getElementById("Submit");
 
     // Function that disables the submit button if there are errors

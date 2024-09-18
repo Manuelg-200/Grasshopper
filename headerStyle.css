@@ -15,9 +15,10 @@ header {
 .searchBarContainer {
     display: flex;
     align-items: center;
-    margin-left: auto;
+    margin-top: auto;
     margin-right: 1.5%;
-    margin-top: 2.3%;
+    margin-bottom: auto;
+    margin-left: auto;
     border-width: 2px;
     border-style: solid;
     border-color: rgb(188, 183, 183);
@@ -75,15 +76,19 @@ nav {
 
 .accessControlButtonContainer {
     margin-left: auto;
+    margin-right: 12px;
 }
 
 .navBarButton {
     border-radius: 0;
     border-style: none;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: black;
     color: white;
     background-color: rgb(17, 87, 46);
     height: 35px;
-    width: 70px;
+    padding: 0 10px;
 }
 
 .navBarButton:hover {

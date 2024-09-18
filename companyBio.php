@@ -1,13 +1,13 @@
 <?php 
     session_start();
-    include 'DatabaseUtils/rememberLogin.php'; 
+    include 'utils/rememberLogin.php'; 
 ?>
 
 <!DOCTYPE html>
 <html lang="IT">
     <head>
         <title>Grasshopper Chi Siamo</title>
-        <link rel="stylesheet" type="text/css" href="styles/companyBioStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="companyBioStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body>

@@ -7,7 +7,7 @@
     $passwd = $_POST["pass"];
     $passwdconfirm = $_POST["confirm"];
 
-    include 'DatabaseUtils/connect.php';
+    include '../utils/connect.php';
 
     // Check if the email is already taken
     $checkStmt = $conn->prepare("SELECT Email FROM userdata WHERE Email = ?");
@@ -18,7 +18,7 @@
     if($checkResult->num_rows > 0) {
         $conn->close();
         $_SESSION["takenEmail"] = true;
-        header("Location: SignUpForm.php");
+        header("Location: RegistrationForm.php");
         exit;
     }
 
@@ -41,7 +41,7 @@
 <html lang=it>
     <head>
         <title>Welcome page</title>
-        <link rel="stylesheet" type="text/css" href="styles/loginStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="loginStyle.css"/>
         <meta name="viewport" content="width=device-width"/>
     </head>
     <body class="LoginFormPage">
@@ -55,7 +55,7 @@
                 <p>Si è verificato un errore durante la registrazione!</p>
                 <p>Per favore riprova più tardi</p>
                 <p>Sarai reindirizzato alla pagina iniziale tra 5 secondi</p>
-                <meta http-equiv="refresh" content="5; url=index.php">
+                <meta http-equiv="refresh" content="5; url=../index.php">
             <?php } ?>
         </div>
     </body>
