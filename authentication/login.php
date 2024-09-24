@@ -57,8 +57,8 @@
                 $expiration = time() + (365 * 24 * 60 * 60);
                 $expirationString = date("Y-m-d H:i:s", $expiration);
                 setcookie("remember", $email . '|' . $expirationString, $expiration, "/"); // cookie expires in 1 year
-            } else
-                $_SESSION["LoggedIn"] = $email; 
+            }
+            $_SESSION["LoggedIn"] = $email; 
             if($row->AdminRole)
                 $_SESSION["Admin"] = true; ?>
             <meta http-equiv="refresh" content="5; url=../index.php">

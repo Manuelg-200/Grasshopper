@@ -35,7 +35,7 @@
                 </div><br>
                 <!-- to do -->
                 <a href="" class="forgotPassword">Password dimenticata?</a><br>
-                <div class="mainButtonContainer"><input type="submit" value="Accedi" class="mainButton"></input></div>
+                <div class="mainButtonContainer"><input type="submit" value="Accedi" class="mainButton" id="Submit"></input></div>
             </form>
             <div class="Separator"><span class="or">Oppure</span></div>
             <div class="AlternativeButtonContainer"><a href="RegistrationForm.php"><button class="AlternativeButton">Iscriviti</button></a></div>

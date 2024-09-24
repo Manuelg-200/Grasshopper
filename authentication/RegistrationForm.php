@@ -4,7 +4,7 @@
     if(isset($_SESSION["LoggedIn"])) {
         header("Location: ../index.php");
         exit;
-    } 
+    }
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +56,7 @@
                     <p id="PasswdConfirmError"></p>
                 </div>
 
-                <div class="mainButtonContainer"><input type="submit" name="submit" value="Registrati" id="Submit" class="mainButton"></input></div>
+                <div class="mainButtonContainer"><input type="submit" name="submit" value="Registrati" id="Submit" class="mainButton" disabled></input></div>
             </form>
             <div class="Separator"><span class="or">Hai già un account?</span></div>
             <div class="AlternativeButtonContainer"><a href="LoginForm.php"><button class="AlternativeButton">Accedi</button></a></div>
